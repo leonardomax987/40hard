@@ -36,113 +36,168 @@
       background: var(--bg);
       color: var(--text);
       min-height: 100vh;
-      padding: 24px 16px 48px;
+      padding: 14px 14px 48px;
       background-image:
         radial-gradient(ellipse at 20% 80%, rgba(154,3,0,0.13) 0%, transparent 60%),
-        radial-gradient(ellipse at 80% 20%, rgba(232,93,4,0.10) 0%, transparent 55%),
-        radial-gradient(ellipse at 50% 50%, rgba(26,20,8,0.95) 0%, transparent 100%);
+        radial-gradient(ellipse at 80% 20%, rgba(232,93,4,0.10) 0%, transparent 55%);
     }
 
     ::-webkit-scrollbar { width: 6px; height: 6px; }
     ::-webkit-scrollbar-track { background: var(--bg); }
     ::-webkit-scrollbar-thumb { background: var(--border2); border-radius: 99px; }
 
+    /* ── HEADER (compact) ── */
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 10px;
+    }
     h1 {
-      font-size: 1.55rem;
+      font-size: 1.15rem;
       font-weight: 800;
       background: linear-gradient(90deg, var(--yellow), var(--accent), var(--red2));
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
-      letter-spacing: -0.5px;
+      letter-spacing: -0.3px;
+      line-height: 1.2;
+    }
+    .header-sub {
+      font-size: 0.6rem;
+      color: var(--muted);
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-top: 1px;
     }
 
-    .header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin-bottom: 24px;
+    /* ── FLAME BAR ── */
+    .flame-bar {
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--wine), var(--red2), var(--accent), var(--accent2), var(--yellow), var(--accent2), var(--accent), var(--red2), var(--wine), transparent);
+      border-radius: 99px;
+      margin-bottom: 10px;
+      opacity: 0.7;
     }
 
-    .btn {
-      background: linear-gradient(135deg, var(--accent), var(--red2));
-      color: var(--yellow);
-      border: none;
-      border-radius: 8px;
-      padding: 8px 16px;
-      font-size: 0.9rem;
-      font-weight: 700;
-      cursor: pointer;
-      transition: all 0.2s;
-      letter-spacing: 0.3px;
-    }
-    .btn:hover { background: linear-gradient(135deg, var(--accent2), var(--accent)); color: #fff; box-shadow: 0 0 14px rgba(232,93,4,0.4); }
-    .btn.secondary { background: var(--surface2); color: var(--muted); border: 1px solid var(--border2); }
-    .btn.secondary:hover { background: var(--surface3); color: var(--text); box-shadow: none; }
-    .btn.danger { background: linear-gradient(135deg, var(--wine), var(--red)); color: #ffb3b3; }
-    .btn.danger:hover { background: linear-gradient(135deg, var(--red), var(--red2)); color: #fff; box-shadow: 0 0 14px rgba(157,2,8,0.5); }
-    .btn.warning { background: linear-gradient(135deg, #4a2800, #7a3e00); color: var(--yellow); border: 1px solid #7a3e00; }
-    .btn.warning:hover { background: linear-gradient(135deg, #7a3e00, var(--accent)); color: #fff; }
-    .btn.success { background: linear-gradient(135deg, #1a3300, #2d5200); color: #86efac; border: 1px solid #2d5200; }
-    .btn.success:hover { background: linear-gradient(135deg, #2d5200, #3d6e00); color: #fff; }
-    .btn.small { padding: 4px 10px; font-size: 0.78rem; }
-    .btn:disabled { opacity: 0.35; cursor: default; box-shadow: none; }
-
+    /* ── TABS (compact) ── */
     .tabs {
       display: flex;
-      gap: 6px;
-      margin-bottom: 24px;
+      gap: 5px;
+      margin-bottom: 14px;
       background: var(--surface);
-      border-radius: var(--radius);
-      padding: 5px;
+      border-radius: 10px;
+      padding: 4px;
       border: 1px solid var(--border);
     }
     .tab {
       flex: 1;
       text-align: center;
-      padding: 8px;
-      border-radius: 8px;
+      padding: 6px 4px;
+      border-radius: 7px;
       cursor: pointer;
-      font-size: 0.85rem;
+      font-size: 0.78rem;
       font-weight: 700;
       color: var(--muted);
       transition: all 0.2s;
-      letter-spacing: 0.3px;
+      letter-spacing: 0.2px;
     }
-    .tab.active { background: linear-gradient(135deg, var(--accent), var(--red2)); color: var(--yellow); box-shadow: var(--glow); }
+    .tab.active {
+      background: linear-gradient(135deg, var(--accent), var(--red2));
+      color: var(--yellow);
+      box-shadow: var(--glow);
+    }
 
-    .view-nav { display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px; }
-    .view-nav-label { font-size: 0.95rem; font-weight: 700; color: var(--accent3); }
-    .nav-arrows { display: flex; gap: 8px; }
+    /* ── BUTTONS ── */
+    .btn {
+      background: linear-gradient(135deg, var(--accent), var(--red2));
+      color: var(--yellow);
+      border: none;
+      border-radius: 8px;
+      padding: 7px 13px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .btn:hover { background: linear-gradient(135deg, var(--accent2), var(--accent)); color: #fff; box-shadow: 0 0 14px rgba(232,93,4,0.4); }
+    .btn.secondary { background: var(--surface2); color: var(--muted); border: 1px solid var(--border2); }
+    .btn.secondary:hover { background: var(--surface3); color: var(--text); box-shadow: none; }
+    .btn.danger { background: linear-gradient(135deg, var(--wine), var(--red)); color: #ffb3b3; }
+    .btn.danger:hover { background: linear-gradient(135deg, var(--red), var(--red2)); color: #fff; }
+    .btn.warning { background: linear-gradient(135deg, #4a2800, #7a3e00); color: var(--yellow); border: 1px solid #7a3e00; }
+    .btn.warning:hover { background: linear-gradient(135deg, #7a3e00, var(--accent)); color: #fff; }
+    .btn.success { background: linear-gradient(135deg, #1a3300, #2d5200); color: #86efac; border: 1px solid #2d5200; }
+    .btn.success:hover { background: linear-gradient(135deg, #2d5200, #3d6e00); color: #fff; }
+    .btn.small { padding: 4px 10px; font-size: 0.76rem; }
+    .btn:disabled { opacity: 0.35; cursor: default; box-shadow: none; }
 
+    /* ── STATS STRIP ── */
+    .stats-strip {
+      background: var(--surface);
+      border: 1px solid var(--border2);
+      border-radius: 10px;
+      padding: 7px 14px;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+    }
+    .stats-strip .stat-text {
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--accent3);
+      white-space: nowrap;
+    }
+    .stats-strip .stat-pct {
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--muted);
+      white-space: nowrap;
+    }
+    /* completion bar inside strip */
+    .completion-bar-wrap {
+      flex: 1;
+      height: 5px;
+      background: #000;
+      border-radius: 99px;
+      overflow: hidden;
+      margin: 0 10px;
+    }
+    .completion-bar {
+      height: 100%;
+      border-radius: 99px;
+      background: linear-gradient(90deg, #ffe566, #f48c06, #e85d04, #c1121f, #6a040f);
+      transition: width 0.4s ease;
+    }
+
+    /* ── DAY NAV ── */
     .day-nav {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      margin-bottom: 20px;
+      margin-bottom: 10px;
       background: var(--surface);
       border: 1px solid var(--border2);
       border-radius: var(--radius);
-      padding: 10px 16px;
+      padding: 8px 12px;
     }
     .day-nav-label { text-align: center; flex: 1; }
-    .day-nav-label .date-main { font-size: 1rem; font-weight: 700; color: var(--accent3); }
-    .day-nav-label .date-sub { font-size: 0.76rem; color: var(--muted); margin-top: 2px; }
-    .today-badge {
-      font-size: 0.68rem; font-weight: 700;
-      background: linear-gradient(135deg, var(--accent), var(--red2));
-      color: var(--yellow); padding: 2px 8px; border-radius: 99px; margin-left: 8px; vertical-align: middle;
-    }
+    .day-nav-label .date-main { font-size: 0.9rem; font-weight: 700; color: var(--accent3); }
+    .day-nav-label .date-sub { font-size: 0.7rem; color: var(--muted); margin-top: 1px; }
+    .today-badge { font-size: 0.62rem; font-weight: 700; background: linear-gradient(135deg, var(--accent), var(--red2)); color: var(--yellow); padding: 2px 7px; border-radius: 99px; margin-left: 7px; vertical-align: middle; }
 
+    /* ── HABIT CARDS ── */
     .habit-card {
       background: var(--surface);
       border: 1px solid var(--border2);
       border-radius: var(--radius);
-      padding: 15px 18px;
-      margin-bottom: 10px;
+      padding: 13px 15px;
+      margin-bottom: 9px;
       display: flex;
       align-items: center;
-      gap: 14px;
+      gap: 13px;
       transition: border-color 0.2s, box-shadow 0.2s;
     }
     .habit-card:hover { border-color: var(--accent); box-shadow: var(--glow); }
@@ -158,24 +213,26 @@
     .habit-check:hover { border-color: var(--accent); }
 
     .habit-info { flex: 1; min-width: 0; }
-    .habit-name { font-size: 0.98rem; font-weight: 700; color: var(--text); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .habit-name { font-size: 0.95rem; font-weight: 700; color: var(--text); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
     .habit-name.done { text-decoration: line-through; color: var(--muted); }
-    .habit-sub { font-size: 0.75rem; color: var(--muted); margin-top: 3px; }
+    .habit-sub { font-size: 0.72rem; color: var(--muted); margin-top: 2px; }
 
+    /* ── SECTION LABEL ── */
     .section-label {
-      font-size: 0.72rem; font-weight: 800; text-transform: uppercase;
-      letter-spacing: 1.5px; color: var(--accent); margin: 22px 0 10px;
-      padding-left: 10px; border-left: 3px solid var(--accent);
+      font-size: 0.68rem; font-weight: 800; text-transform: uppercase;
+      letter-spacing: 1.5px; color: var(--accent); margin: 16px 0 8px;
+      padding-left: 9px; border-left: 3px solid var(--accent);
     }
 
-    .progress-wrap { background: var(--border); border-radius: 99px; height: 4px; margin-top: 7px; overflow: hidden; }
+    /* flex progress (flexible habits) */
+    .progress-wrap { background: var(--border); border-radius: 99px; height: 4px; margin-top: 6px; overflow: hidden; }
     .progress-bar { height: 100%; border-radius: 99px; background: linear-gradient(90deg, var(--accent), var(--accent2)); transition: width 0.4s; }
     .progress-bar.done { background: linear-gradient(90deg, #4ade80, #22c55e); }
 
-    .stats-bar { display: flex; gap: 10px; margin-bottom: 20px; }
-    .stat-chip { background: var(--surface); border: 1px solid var(--border2); border-radius: 10px; padding: 10px 14px; flex: 1; text-align: center; }
-    .stat-chip .val { font-size: 1.35rem; font-weight: 800; color: var(--accent3); }
-    .stat-chip .lbl { font-size: 0.7rem; color: var(--muted); margin-top: 2px; text-transform: uppercase; letter-spacing: 0.5px; }
+    /* ── HISTORY TABLE ── */
+    .view-nav { display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px; }
+    .view-nav-label { font-size: 0.9rem; font-weight: 700; color: var(--accent3); }
+    .nav-arrows { display: flex; gap: 8px; }
 
     .history-table { overflow-x: auto; border-radius: var(--radius); border: 1px solid var(--border2); }
     table { width: 100%; border-collapse: collapse; font-size: 0.84rem; }
@@ -187,73 +244,73 @@
     .cell-na { color: var(--border2); text-align: center; }
     .cell-partial { color: var(--yellow); font-size: 0.78rem; text-align: center; font-weight: 700; }
 
+    /* ── MODAL ── */
     .modal-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.8); z-index: 100; align-items: center; justify-content: center; }
     .modal-overlay.open { display: flex; }
-    .modal { background: var(--surface); border: 1px solid var(--border2); border-radius: 16px; padding: 26px; width: 100%; max-width: 460px; box-shadow: 0 24px 64px rgba(0,0,0,0.7), var(--glow); max-height: 92vh; overflow-y: auto; }
-    .modal h2 { margin-bottom: 20px; font-size: 1.15rem; font-weight: 800; background: linear-gradient(90deg, var(--accent3), var(--accent)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .modal { background: var(--surface); border: 1px solid var(--border2); border-radius: 16px; padding: 24px; width: 100%; max-width: 460px; box-shadow: 0 24px 64px rgba(0,0,0,0.7), var(--glow); max-height: 92vh; overflow-y: auto; }
+    .modal h2 { margin-bottom: 18px; font-size: 1.1rem; font-weight: 800; background: linear-gradient(90deg, var(--accent3), var(--accent)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
 
-    .form-group { margin-bottom: 16px; }
-    .form-group label { display: block; font-size: 0.78rem; color: var(--muted); margin-bottom: 6px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; }
-    .form-group input[type="text"], .form-group input[type="number"], .form-group input[type="date"], .form-group select { width: 100%; background: var(--bg); border: 1px solid var(--border2); border-radius: 8px; padding: 10px 12px; color: var(--text); font-size: 0.94rem; }
-    .form-group input:focus, .form-group select:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 2px rgba(232,93,4,0.2); }
+    .form-group { margin-bottom: 14px; }
+    .form-group label { display: block; font-size: 0.76rem; color: var(--muted); margin-bottom: 5px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; }
+    .form-group input[type="text"],.form-group input[type="number"],.form-group input[type="date"],.form-group select { width: 100%; background: var(--bg); border: 1px solid var(--border2); border-radius: 8px; padding: 9px 11px; color: var(--text); font-size: 0.92rem; }
+    .form-group input:focus,.form-group select:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 2px rgba(232,93,4,0.2); }
     .form-group select option { background: var(--bg); }
     input[type="date"]::-webkit-calendar-picker-indicator { filter: invert(0.6) sepia(1) saturate(2) hue-rotate(5deg); }
 
     .type-toggle { display: flex; gap: 8px; }
-    .type-btn { flex: 1; padding: 10px; border-radius: 8px; border: 1px solid var(--border2); background: var(--bg); color: var(--muted); font-size: 0.84rem; font-weight: 700; cursor: pointer; text-align: center; transition: all 0.15s; }
+    .type-btn { flex: 1; padding: 9px; border-radius: 8px; border: 1px solid var(--border2); background: var(--bg); color: var(--muted); font-size: 0.82rem; font-weight: 700; cursor: pointer; text-align: center; transition: all 0.15s; }
     .type-btn.active { background: linear-gradient(135deg, var(--accent), var(--red2)); color: var(--yellow); border-color: var(--accent); }
 
     .day-picker { display: flex; gap: 6px; flex-wrap: wrap; }
-    .day-btn { padding: 6px 10px; border-radius: 7px; border: 1px solid var(--border2); background: var(--bg); color: var(--muted); font-size: 0.8rem; font-weight: 700; cursor: pointer; transition: all 0.15s; }
+    .day-btn { padding: 6px 9px; border-radius: 7px; border: 1px solid var(--border2); background: var(--bg); color: var(--muted); font-size: 0.78rem; font-weight: 700; cursor: pointer; transition: all 0.15s; }
     .day-btn.selected { background: linear-gradient(135deg, var(--accent), var(--red2)); color: var(--yellow); border-color: var(--accent); }
 
     .freq-row { display: flex; gap: 10px; align-items: center; }
     .freq-row input[type="number"] { width: 80px; }
     .freq-row select { flex: 1; }
 
-    .until-options { display: flex; flex-direction: column; gap: 8px; }
-    .until-option { display: flex; align-items: flex-start; gap: 10px; background: var(--bg); border: 1px solid var(--border2); border-radius: 8px; padding: 10px 14px; cursor: pointer; transition: border-color 0.15s; flex-wrap: wrap; }
+    .until-options { display: flex; flex-direction: column; gap: 7px; }
+    .until-option { display: flex; align-items: flex-start; gap: 10px; background: var(--bg); border: 1px solid var(--border2); border-radius: 8px; padding: 9px 13px; cursor: pointer; transition: border-color 0.15s; flex-wrap: wrap; }
     .until-option.selected { border-color: var(--accent); box-shadow: 0 0 0 1px rgba(232,93,4,0.2); }
-    .until-option input[type="radio"] { accent-color: var(--accent); width: 16px; height: 16px; flex-shrink: 0; margin-top: 2px; }
-    .until-option label { font-size: 0.88rem; cursor: pointer; flex: 1; color: var(--text); }
-    .until-sub { margin-top: 10px; width: 100%; }
+    .until-option input[type="radio"] { accent-color: var(--accent); width: 15px; height: 15px; flex-shrink: 0; margin-top: 2px; }
+    .until-option label { font-size: 0.86rem; cursor: pointer; flex: 1; color: var(--text); }
+    .until-sub { margin-top: 9px; width: 100%; }
     .until-duration-row { display: flex; gap: 8px; align-items: center; }
     .until-duration-row input[type="number"] { width: 80px; }
     .until-duration-row select { flex: 1; }
 
-    .modal-actions { display: flex; gap: 10px; margin-top: 22px; }
+    .modal-actions { display: flex; gap: 10px; margin-top: 20px; }
     .modal-actions .btn { flex: 1; padding: 10px; }
 
-    .manage-card { background: var(--surface); border: 1px solid var(--border2); border-radius: var(--radius); padding: 14px 16px; margin-bottom: 10px; display: flex; align-items: center; justify-content: space-between; gap: 10px; flex-wrap: wrap; transition: border-color 0.2s; }
+    /* ── MANAGE ── */
+    .manage-card { background: var(--surface); border: 1px solid var(--border2); border-radius: var(--radius); padding: 13px 15px; margin-bottom: 9px; display: flex; align-items: center; justify-content: space-between; gap: 10px; flex-wrap: wrap; transition: border-color 0.2s; }
     .manage-card:hover { border-color: var(--accent); }
-    .manage-info .name { font-weight: 700; font-size: 0.95rem; }
-    .manage-info .sub { font-size: 0.75rem; color: var(--muted); margin-top: 2px; }
+    .manage-info .name { font-weight: 700; font-size: 0.93rem; }
+    .manage-info .sub { font-size: 0.73rem; color: var(--muted); margin-top: 2px; }
     .manage-actions { display: flex; gap: 6px; flex-wrap: wrap; }
 
-    .archive-card { background: var(--surface); border: 1px solid var(--wine); border-radius: var(--radius); padding: 14px 16px; margin-bottom: 10px; display: flex; align-items: center; justify-content: space-between; gap: 10px; flex-wrap: wrap; opacity: 0.8; }
-    .archive-card .name { font-weight: 700; font-size: 0.95rem; color: var(--muted); }
-    .archive-card .sub { font-size: 0.75rem; color: var(--wine); margin-top: 2px; }
+    .archive-card { background: var(--surface); border: 1px solid var(--wine); border-radius: var(--radius); padding: 13px 15px; margin-bottom: 9px; display: flex; align-items: center; justify-content: space-between; gap: 10px; flex-wrap: wrap; opacity: 0.8; }
+    .archive-card .name { font-weight: 700; font-size: 0.93rem; color: var(--muted); }
+    .archive-card .sub { font-size: 0.73rem; color: var(--wine); margin-top: 2px; }
 
-    .end-tag { display: inline-block; font-size: 0.66rem; font-weight: 700; padding: 2px 7px; border-radius: 99px; margin-left: 6px; vertical-align: middle; background: rgba(232,93,4,0.15); color: var(--accent2); border: 1px solid rgba(232,93,4,0.3); }
-    .divider { border: none; border-top: 1px solid var(--border2); margin: 28px 0; }
-    .empty { text-align: center; color: var(--muted); padding: 40px 0; font-size: 0.9rem; }
-
-    .flame-bar { height: 2px; background: linear-gradient(90deg, transparent, var(--wine), var(--red2), var(--accent), var(--accent2), var(--yellow), var(--accent2), var(--accent), var(--red2), var(--wine), transparent); border-radius: 99px; margin-bottom: 28px; opacity: 0.7; }
-
-    @media(max-width:480px) { .stats-bar { flex-direction: column; } }
+    .end-tag { display: inline-block; font-size: 0.64rem; font-weight: 700; padding: 2px 6px; border-radius: 99px; margin-left: 5px; vertical-align: middle; background: rgba(232,93,4,0.15); color: var(--accent2); border: 1px solid rgba(232,93,4,0.3); }
+    .divider { border: none; border-top: 1px solid var(--border2); margin: 24px 0; }
+    .empty { text-align: center; color: var(--muted); padding: 36px 0; font-size: 0.88rem; }
   </style>
 </head>
 <body>
 
+<!-- HEADER -->
 <div class="header">
   <div>
     <h1>🔥 40 Days Hard</h1>
-    <div style="font-size:0.72rem;color:var(--muted);margin-top:3px;letter-spacing:1px;text-transform:uppercase;">Habit Tracker</div>
+    <div class="header-sub">Habit Tracker</div>
   </div>
   <button class="btn" onclick="openModal()">+ New Habit</button>
 </div>
 <div class="flame-bar"></div>
 
+<!-- TABS -->
 <div class="tabs">
   <div class="tab active" onclick="switchTab('today')">Today</div>
   <div class="tab" onclick="switchTab('history')">History</div>
@@ -290,7 +347,7 @@
         <label>Frequency Goal</label>
         <div class="freq-row">
           <input type="number" id="freqCount" min="1" max="31" value="3" />
-          <span style="color:var(--muted);font-size:0.88rem">times per</span>
+          <span style="color:var(--muted);font-size:0.86rem">times per</span>
           <select id="freqPeriod">
             <option value="week">Week</option>
             <option value="month">Month</option>
@@ -339,7 +396,7 @@
 <div class="modal-overlay" id="recoverOverlay">
   <div class="modal" style="max-width:400px">
     <h2>Recover Habit</h2>
-    <p style="color:var(--muted);font-size:0.86rem;margin-bottom:20px;">Set a new end date for <strong id="recoverName" style="color:var(--accent3)"></strong>.</p>
+    <p style="color:var(--muted);font-size:0.84rem;margin-bottom:18px;">Set a new end date for <strong id="recoverName" style="color:var(--accent3)"></strong>.</p>
     <div class="form-group">
       <label>New End Date</label>
       <div class="until-options">
@@ -394,7 +451,7 @@
   }
 
   function toKey(date) {
-    const y=date.getFullYear(), m=String(date.getMonth()+1).padStart(2,'0'), d=String(date.getDate()).padStart(2,'0');
+    const y=date.getFullYear(),m=String(date.getMonth()+1).padStart(2,'0'),d=String(date.getDate()).padStart(2,'0');
     return `${y}-${m}-${d}`;
   }
   function todayDate() { const d=new Date(); d.setHours(0,0,0,0); return d; }
@@ -478,58 +535,58 @@
     }
     if (h?.until) {
       const u=h.until;
-      if (u.type==='date') { selectUntil('date'); document.getElementById('untilDateInput').value=h.endDate||''; }
-      else if (u.type==='duration') { selectUntil('duration'); document.getElementById('untilDurCount').value=u.count||40; document.getElementById('untilDurUnit').value=u.unit||'days'; }
+      if (u.type==='date'){selectUntil('date');document.getElementById('untilDateInput').value=h.endDate||'';}
+      else if (u.type==='duration'){selectUntil('duration');document.getElementById('untilDurCount').value=u.count||40;document.getElementById('untilDurUnit').value=u.unit||'days';}
       else selectUntil('toggle');
     } else selectUntil('toggle');
     document.getElementById('modalOverlay').classList.add('open');
     setTimeout(()=>document.getElementById('habitName').focus(),50);
   }
 
-  function closeModal() { document.getElementById('modalOverlay').classList.remove('open'); editingId=null; }
+  function closeModal(){ document.getElementById('modalOverlay').classList.remove('open'); editingId=null; }
 
   function saveHabit() {
     const name=document.getElementById('habitName').value.trim();
-    if (!name) { alert('Please enter a habit name.'); return; }
+    if (!name){alert('Please enter a habit name.');return;}
     let habitData={name,scheduleType:habitType};
     if (habitType==='specific') {
       const sel=[...document.querySelectorAll('.day-btn.selected')].map(el=>parseInt(el.dataset.day));
-      if (!sel.length) { alert('Please select at least one day.'); return; }
+      if (!sel.length){alert('Please select at least one day.');return;}
       habitData.days=sel;
     } else {
       const count=parseInt(document.getElementById('freqCount').value);
-      if (!count||count<1) { alert('Please enter a valid frequency.'); return; }
+      if (!count||count<1){alert('Please enter a valid frequency.');return;}
       habitData.freqCount=count; habitData.freqPeriod=document.getElementById('freqPeriod').value;
     }
-    let until={type:untilType}, endDate=null;
-    if (untilType==='date') {
+    let until={type:untilType},endDate=null;
+    if (untilType==='date'){
       const val=document.getElementById('untilDateInput').value;
-      if (!val) { alert('Please choose an end date.'); return; }
-      until.date=val; endDate=val;
-    } else if (untilType==='duration') {
+      if (!val){alert('Please choose an end date.');return;}
+      until.date=val;endDate=val;
+    } else if (untilType==='duration'){
       const count=parseInt(document.getElementById('untilDurCount').value);
       const unit=document.getElementById('untilDurUnit').value;
-      if (!count||count<1) { alert('Please enter a valid duration.'); return; }
-      until.count=count; until.unit=unit;
-      const computed=computeEndDate({until}); endDate=computed?toKey(computed):null;
+      if (!count||count<1){alert('Please enter a valid duration.');return;}
+      until.count=count;until.unit=unit;
+      const computed=computeEndDate({until});endDate=computed?toKey(computed):null;
     }
-    habitData.until=until; habitData.endDate=endDate;
-    if (editingId) {
+    habitData.until=until;habitData.endDate=endDate;
+    if (editingId){
       const idx=habits.findIndex(h=>h.id===editingId);
       const prev=habits[idx];
-      if (untilType==='toggle'&&prev.until?.type==='toggle') { until.toggledOff=prev.until.toggledOff||false; until.toggledOffDate=prev.until.toggledOffDate||null; }
+      if (untilType==='toggle'&&prev.until?.type==='toggle'){until.toggledOff=prev.until.toggledOff||false;until.toggledOffDate=prev.until.toggledOffDate||null;}
       habits[idx]={...prev,...habitData};
     } else {
-      if (untilType==='toggle') { until.toggledOff=false; until.toggledOffDate=null; }
+      if (untilType==='toggle'){until.toggledOff=false;until.toggledOffDate=null;}
       habits.push({id:Date.now().toString(),...habitData});
     }
-    save(); closeModal(); refresh();
+    save();closeModal();refresh();
   }
 
   document.getElementById('modalOverlay').addEventListener('click',function(e){if(e.target===this)closeModal();});
   document.getElementById('habitName').addEventListener('keydown',e=>{if(e.key==='Enter')saveHabit();});
 
-  function selectRecover(type) {
+  function selectRecover(type){
     recoverType=type;
     ['toggle','date','duration'].forEach(t=>{
       document.getElementById('recOpt_'+t).classList.toggle('selected',t===type);
@@ -539,53 +596,53 @@
     document.getElementById('recDurationSub').style.display=type==='duration'?'block':'none';
   }
 
-  function openRecover(id) {
+  function openRecover(id){
     recoveringId=id;
     document.getElementById('recoverName').textContent=habits.find(h=>h.id===id)?.name||'';
     selectRecover('toggle');
     document.getElementById('recoverOverlay').classList.add('open');
   }
 
-  function closeRecover() { document.getElementById('recoverOverlay').classList.remove('open'); recoveringId=null; }
+  function closeRecover(){ document.getElementById('recoverOverlay').classList.remove('open'); recoveringId=null; }
 
-  function confirmRecover() {
+  function confirmRecover(){
     const habit=habits.find(h=>h.id===recoveringId);
     if (!habit) return;
-    let until={type:recoverType}, endDate=null;
-    if (recoverType==='date') {
+    let until={type:recoverType},endDate=null;
+    if (recoverType==='date'){
       const val=document.getElementById('recDateInput').value;
-      if (!val) { alert('Please choose an end date.'); return; }
-      until.date=val; endDate=val;
-    } else if (recoverType==='duration') {
+      if (!val){alert('Please choose an end date.');return;}
+      until.date=val;endDate=val;
+    } else if (recoverType==='duration'){
       const count=parseInt(document.getElementById('recDurCount').value);
       const unit=document.getElementById('recDurUnit').value;
-      if (!count||count<1) { alert('Please enter a valid duration.'); return; }
-      until.count=count; until.unit=unit;
-      const computed=computeEndDate({until}); endDate=computed?toKey(computed):null;
+      if (!count||count<1){alert('Please enter a valid duration.');return;}
+      until.count=count;until.unit=unit;
+      const computed=computeEndDate({until});endDate=computed?toKey(computed):null;
     }
-    if (recoverType==='toggle') { until.toggledOff=false; until.toggledOffDate=null; }
-    habit.until=until; habit.endDate=endDate;
-    save(); closeRecover(); refresh();
+    if (recoverType==='toggle'){until.toggledOff=false;until.toggledOffDate=null;}
+    habit.until=until;habit.endDate=endDate;
+    save();closeRecover();refresh();
   }
 
   document.getElementById('recoverOverlay').addEventListener('click',function(e){if(e.target===this)closeRecover();});
 
-  function switchTab(tab) {
+  function switchTab(tab){
     currentTab=tab;
-    document.querySelectorAll('.tab').forEach((el,i)=>{ el.classList.toggle('active',['today','history','manage'][i]===tab); });
-    ['today','history','manage'].forEach(t=>{ document.getElementById('tab-'+t).style.display=t===tab?'':'none'; });
+    document.querySelectorAll('.tab').forEach((el,i)=>{el.classList.toggle('active',['today','history','manage'][i]===tab);});
+    ['today','history','manage'].forEach(t=>{document.getElementById('tab-'+t).style.display=t===tab?'':'none';});
     if (tab==='today') renderToday();
-    if (tab==='history') { historyOffset=0; renderHistory(); }
+    if (tab==='history'){historyOffset=0;renderHistory();}
     if (tab==='manage') renderManage();
   }
 
-  function refresh() {
+  function refresh(){
     if (currentTab==='today') renderToday();
     if (currentTab==='history') renderHistory();
     if (currentTab==='manage') renderManage();
   }
 
-  function renderToday() {
+  function renderToday(){
     const base=todayDate(), viewDate=addDays(base,todayOffset);
     const key=toKey(viewDate), dow=viewDate.getDay(), isToday=todayOffset===0;
     if (!logs[key]) logs[key]={};
@@ -595,47 +652,60 @@
     const allH=[...specH,...flexH];
     const done=allH.filter(h=>logs[key][h.id]===true).length;
     const total=allH.length;
+    const pct=total>0?Math.round((done/total)*100):0;
 
     let html=`
       <div class="day-nav">
         <button class="btn secondary small" onclick="shiftTodayView(-1)">◀</button>
         <div class="day-nav-label">
-          <div class="date-main">${isToday?'Today':formatDateShort(viewDate)}${isToday?'<span class="today-badge">TODAY</span>':''}</div>
+          <div class="date-main">
+            ${isToday?'Today':formatDateShort(viewDate)}
+            ${isToday?'<span class="today-badge">TODAY</span>':''}
+          </div>
           <div class="date-sub">${formatDate(viewDate)}</div>
         </div>
         <button class="btn secondary small" onclick="shiftTodayView(1)">▶</button>
       </div>
-      <div class="stats-bar">
-        <div class="stat-chip"><div class="val">${done}/${total}</div><div class="lbl">Done</div></div>
-        <div class="stat-chip"><div class="val">${total>0?Math.round((done/total)*100):0}%</div><div class="lbl">Completion</div></div>
+
+      <div class="stats-strip">
+        <span class="stat-text">${done}/${total} done</span>
+        <div class="completion-bar-wrap">
+          <div class="completion-bar" style="width:${pct}%"></div>
+        </div>
+        <span class="stat-pct">${pct}%</span>
       </div>
     `;
 
-    if (specH.length) {
+    if (specH.length){
       html+=`<div class="section-label">Scheduled Habits</div>`;
-      specH.forEach(h=>{ const checked=logs[key][h.id]===true; html+=habitCardHTML(h,checked,key,h.days.map(d=>DAY_NAMES[d]).join(', ')); });
+      specH.forEach(h=>{
+        const checked=logs[key][h.id]===true;
+        html+=habitCardHTML(h,checked,key,h.days.map(d=>DAY_NAMES[d]).join(', '));
+      });
     }
-    if (flexH.length) {
+
+    if (flexH.length){
       html+=`<div class="section-label">Flexible Habits</div>`;
       flexH.forEach(h=>{
         const checked=logs[key][h.id]===true;
         const pd=h.freqPeriod==='week'?weekDates(startOfWeek(viewDate)):monthDates(viewDate.getFullYear(),viewDate.getMonth());
-        const checks=flexChecksInDates(h,pd), pct=Math.min(1,checks/h.freqCount), goalMet=checks>=h.freqCount;
+        const checks=flexChecksInDates(h,pd),pct2=Math.min(1,checks/h.freqCount),goalMet=checks>=h.freqCount;
         html+=`<div class="habit-card">
           <div class="habit-check ${checked?'checked':''}" onclick="toggleHabit('${h.id}','${key}')">${checked?'✓':''}</div>
           <div class="habit-info" style="flex:1">
             <div class="habit-name ${checked?'done':''}">${h.name}</div>
             <div class="habit-sub">${checks}/${h.freqCount}× this ${h.freqPeriod}</div>
-            <div class="progress-wrap"><div class="progress-bar ${goalMet?'done':''}" style="width:${Math.round(pct*100)}%"></div></div>
+            <div class="progress-wrap"><div class="progress-bar ${goalMet?'done':''}" style="width:${Math.round(pct2*100)}%"></div></div>
           </div>
         </div>`;
       });
     }
+
     if (!total) html+=`<div class="empty">No habits scheduled for this day.</div>`;
     document.getElementById('tab-today').innerHTML=html;
   }
 
-  function habitCardHTML(h,checked,key,subText) {
+  function habitCardHTML(h,checked,key,subText){
     return `<div class="habit-card">
       <div class="habit-check ${checked?'checked':''}" onclick="toggleHabit('${h.id}','${key}')">${checked?'✓':''}</div>
       <div class="habit-info">
@@ -645,37 +715,37 @@
     </div>`;
   }
 
-  function shiftTodayView(n) { todayOffset+=n; renderToday(); }
+  function shiftTodayView(n){ todayOffset+=n; renderToday(); }
 
-  function toggleHabit(id,key) {
+  function toggleHabit(id,key){
     if (!logs[key]) logs[key]={};
     logs[key][id]=!logs[key][id];
-    save(); renderToday();
+    save();renderToday();
   }
 
-  function renderHistory() {
-    const viewBtns=`<div class="tabs" style="margin-bottom:16px;">
+  function renderHistory(){
+    const viewBtns=`<div class="tabs" style="margin-bottom:14px;">
       <div class="tab ${historyView==='day'?'active':''}" onclick="setHistoryView('day')">Day</div>
       <div class="tab ${historyView==='week'?'active':''}" onclick="setHistoryView('week')">Week</div>
       <div class="tab ${historyView==='month'?'active':''}" onclick="setHistoryView('month')">Month</div>
     </div>`;
 
-    const base=todayDate(); let navLabel='', columns=[];
-    if (historyView==='day') {
+    const base=todayDate();let navLabel='',columns=[];
+    if (historyView==='day'){
       const d=addDays(base,historyOffset);
       navLabel=formatDateShort(d)+(historyOffset===0?' 🔥':'');
       columns=[{label:DAY_NAMES[d.getDay()],dates:[d],isFuture:d>base}];
-    } else if (historyView==='week') {
-      const ws=addDays(startOfWeek(base),historyOffset*7), we=addDays(ws,6);
+    } else if (historyView==='week'){
+      const ws=addDays(startOfWeek(base),historyOffset*7),we=addDays(ws,6);
       navLabel=`${formatDate(ws)} – ${formatDate(we)}`;
-      for (let i=0;i<7;i++) { const day=addDays(ws,i); columns.push({label:DAY_NAMES[day.getDay()]+'<br><span style="font-size:0.7rem">'+(day.getMonth()+1)+'/'+day.getDate()+'</span>',dates:[day],isFuture:day>base}); }
+      for (let i=0;i<7;i++){const day=addDays(ws,i);columns.push({label:DAY_NAMES[day.getDay()]+'<br><span style="font-size:0.68rem">'+(day.getMonth()+1)+'/'+day.getDate()+'</span>',dates:[day],isFuture:day>base});}
     } else {
       const ref=new Date(base.getFullYear(),base.getMonth()+historyOffset,1);
       navLabel=ref.toLocaleDateString('en-US',{month:'long',year:'numeric'});
       const allDays=monthDates(ref.getFullYear(),ref.getMonth());
       const wm=new Map();
-      allDays.forEach(d=>{ const ws=toKey(startOfWeek(d)); if (!wm.has(ws)) wm.set(ws,[]); wm.get(ws).push(d); });
-      wm.forEach(dates=>{ const ws=startOfWeek(dates[0]),we=addDays(ws,6); columns.push({label:`${ws.getMonth()+1}/${ws.getDate()}–${we.getMonth()+1}/${we.getDate()}`,dates,isFuture:dates.every(d=>d>base)}); });
+      allDays.forEach(d=>{const ws=toKey(startOfWeek(d));if(!wm.has(ws))wm.set(ws,[]);wm.get(ws).push(d);});
+      wm.forEach(dates=>{const ws=startOfWeek(dates[0]),we=addDays(ws,6);columns.push({label:`${ws.getMonth()+1}/${ws.getDate()}–${we.getMonth()+1}/${we.getDate()}`,dates,isFuture:dates.every(d=>d>base)});});
     }
 
     const nav=`<div class="view-nav">
@@ -687,7 +757,7 @@
       <button class="btn secondary small" onclick="shiftHistory('reset')">Today</button>
     </div>`;
 
-    if (!habits.length) { document.getElementById('tab-history').innerHTML=viewBtns+nav+`<div class="empty">No habits yet.</div>`; return; }
+    if (!habits.length){document.getElementById('tab-history').innerHTML=viewBtns+nav+`<div class="empty">No habits yet.</div>`;return;}
 
     const colDates=columns.flatMap(c=>c.dates);
     const vis=habits.filter(h=>colDates.some(d=>isActiveOn(h,d)));
@@ -699,16 +769,16 @@
     thead+=`</tr>`;
     let tbody='';
 
-    if (specH.length) {
+    if (specH.length){
       tbody+=sectionRow('Scheduled Habits',columns.length+1);
       specH.forEach(h=>{
         tbody+=`<tr><td style="font-weight:700;white-space:nowrap">${h.name}</td>`;
         columns.forEach(col=>{
-          if (historyView!=='month') {
+          if (historyView!=='month'){
             const d=col.dates[0],key=toKey(d),sched=h.days.includes(d.getDay())&&isActiveOn(h,d);
             if (!sched){tbody+=`<td class="cell-na">–</td>`;return;}
             if (col.isFuture){tbody+=`<td class="cell-na">·</td>`;return;}
-            const v=logs[key]?.[h.id]; tbody+=v?`<td class="cell-done">✓</td>`:`<td class="cell-skip">✗</td>`;
+            const v=logs[key]?.[h.id];tbody+=v?`<td class="cell-done">✓</td>`:`<td class="cell-skip">✗</td>`;
           } else {
             const sched=col.dates.filter(d=>h.days.includes(d.getDay())&&isActiveOn(h,d)&&d<=base);
             const done=sched.filter(d=>logs[toKey(d)]?.[h.id]===true);
@@ -723,19 +793,19 @@
       });
     }
 
-    if (flexH.length) {
+    if (flexH.length){
       tbody+=sectionRow('Flexible Habits',columns.length+1);
       flexH.forEach(h=>{
-        tbody+=`<tr><td style="font-weight:700;white-space:nowrap">${h.name} <span style="font-size:0.7rem;color:var(--muted)">(${h.freqCount}×/${h.freqPeriod})</span></td>`;
-        if (h.freqPeriod==='week') {
-          if (historyView==='day') {
+        tbody+=`<tr><td style="font-weight:700;white-space:nowrap">${h.name} <span style="font-size:0.68rem;color:var(--muted)">(${h.freqCount}×/${h.freqPeriod})</span></td>`;
+        if (h.freqPeriod==='week'){
+          if (historyView==='day'){
             const d=columns[0].dates[0],key=toKey(d);
             if (!isActiveOn(h,d)){tbody+=`<td class="cell-na">–</td>`;}
             else if (columns[0].isFuture){tbody+=`<td class="cell-na">·</td>`;}
             else{const v=logs[key]?.[h.id];tbody+=v?`<td class="cell-done">✓</td>`:`<td class="cell-skip">✗</td>`;}
-          } else if (historyView==='week') {
+          } else if (historyView==='week'){
             const active=columns.flatMap(c=>c.dates).filter(d=>isActiveOn(h,d));
-            const past=active.filter(d=>d<=base), checks=flexChecksInDates(h,past);
+            const past=active.filter(d=>d<=base),checks=flexChecksInDates(h,past);
             const allFut=columns.every(c=>c.isFuture);
             if (allFut||!active.length){tbody+=`<td colspan="${columns.length}" class="cell-na">·</td>`;}
             else if (historyOffset<0){tbody+=checks>=h.freqCount?`<td colspan="${columns.length}" class="cell-done">✓</td>`:`<td colspan="${columns.length}" class="cell-skip">✗ ${checks}/${h.freqCount}</td>`;}
@@ -751,12 +821,12 @@
             });
           }
         } else {
-          if (historyView==='day') {
+          if (historyView==='day'){
             const d=columns[0].dates[0],key=toKey(d);
             if (!isActiveOn(h,d)){tbody+=`<td class="cell-na">–</td>`;}
             else if (columns[0].isFuture){tbody+=`<td class="cell-na">·</td>`;}
             else{const v=logs[key]?.[h.id];tbody+=v?`<td class="cell-done">✓</td>`:`<td class="cell-skip">✗</td>`;}
-          } else if (historyView==='week') {
+          } else if (historyView==='week'){
             columns.forEach(col=>{
               const d=col.dates[0],key=toKey(d);
               if (!isActiveOn(h,d)){tbody+=`<td class="cell-na">–</td>`;return;}
@@ -776,26 +846,26 @@
       });
     }
 
-    if (!vis.length) { document.getElementById('tab-history').innerHTML=viewBtns+nav+`<div class="empty">No habits active during this period.</div>`; return; }
+    if (!vis.length){document.getElementById('tab-history').innerHTML=viewBtns+nav+`<div class="empty">No habits active during this period.</div>`;return;}
     document.getElementById('tab-history').innerHTML=viewBtns+nav+`<div class="history-table"><table><thead>${thead}</thead><tbody>${tbody}</tbody></table></div>`;
   }
 
-  function sectionRow(label,colspan) { return `<tr><td colspan="${colspan}" style="background:var(--surface2);color:var(--accent);font-size:0.72rem;font-weight:800;text-transform:uppercase;letter-spacing:1.5px;padding:8px 12px;">${label}</td></tr>`; }
-  function setHistoryView(v) { historyView=v; historyOffset=0; renderHistory(); }
-  function shiftHistory(n) { if (n==='reset') historyOffset=0; else historyOffset+=n; renderHistory(); }
+  function sectionRow(label,colspan){return `<tr><td colspan="${colspan}" style="background:var(--surface2);color:var(--accent);font-size:0.68rem;font-weight:800;text-transform:uppercase;letter-spacing:1.5px;padding:7px 12px;">${label}</td></tr>`;}
+  function setHistoryView(v){historyView=v;historyOffset=0;renderHistory();}
+  function shiftHistory(n){if(n==='reset')historyOffset=0;else historyOffset+=n;renderHistory();}
 
-  function renderManage() {
-    const active=habits.filter(h=>!hasEnded(h)), archived=habits.filter(h=>hasEnded(h));
+  function renderManage(){
+    const active=habits.filter(h=>!hasEnded(h)),archived=habits.filter(h=>hasEnded(h));
     let html='';
-    const specA=active.filter(h=>h.scheduleType==='specific'), flexA=active.filter(h=>h.scheduleType==='flexible');
-    if (!active.length) { html+=`<div class="empty" style="padding:24px 0">No active habits.</div>`; }
-    else {
-      if (specA.length) { html+=`<div class="section-label">Scheduled Habits</div>`; specA.forEach(h=>{html+=manageCardHTML(h,h.days.map(d=>DAY_FULL[d]).join(', '));}); }
-      if (flexA.length) { html+=`<div class="section-label">Flexible Habits</div>`; flexA.forEach(h=>{html+=manageCardHTML(h,`${h.freqCount}× per ${h.freqPeriod}`);}); }
+    const specA=active.filter(h=>h.scheduleType==='specific'),flexA=active.filter(h=>h.scheduleType==='flexible');
+    if (!active.length){html+=`<div class="empty" style="padding:20px 0">No active habits.</div>`;}
+    else{
+      if (specA.length){html+=`<div class="section-label">Scheduled Habits</div>`;specA.forEach(h=>{html+=manageCardHTML(h,h.days.map(d=>DAY_FULL[d]).join(', '));});}
+      if (flexA.length){html+=`<div class="section-label">Flexible Habits</div>`;flexA.forEach(h=>{html+=manageCardHTML(h,`${h.freqCount}× per ${h.freqPeriod}`);});}
     }
-    html+=`<hr class="divider" /><div class="section-label" style="border-color:var(--red2);color:var(--red2);">Archive</div>`;
-    if (!archived.length) { html+=`<div style="color:var(--muted);font-size:0.84rem;padding:12px 4px;">No archived habits yet.</div>`; }
-    else {
+    html+=`<hr class="divider"/><div class="section-label" style="border-color:var(--red2);color:var(--red2);">Archive</div>`;
+    if (!archived.length){html+=`<div style="color:var(--muted);font-size:0.82rem;padding:10px 4px;">No archived habits yet.</div>`;}
+    else{
       archived.forEach(h=>{
         const sub=h.scheduleType==='specific'?h.days.map(d=>DAY_NAMES[d]).join(', '):`${h.freqCount}× per ${h.freqPeriod}`;
         const endedOn=h.endDate?'Ended '+formatDate(new Date(h.endDate+'T00:00:00')):(h.until?.toggledOffDate?'Toggled off '+formatDate(new Date(h.until.toggledOffDate+'T00:00:00')):'Ended');
@@ -811,7 +881,7 @@
     document.getElementById('tab-manage').innerHTML=html;
   }
 
-  function manageCardHTML(h,sub) {
+  function manageCardHTML(h,sub){
     const isToggle=h.until?.type==='toggle';
     const endLabel=endDateLabel(h);
     const toggleBtn=isToggle?`<button class="btn warning small" onclick="toggleOff('${h.id}')">Turn Off</button>`:'';
@@ -824,18 +894,18 @@
     </div>`;
   }
 
-  function toggleOff(id) {
+  function toggleOff(id){
     const h=habits.find(h=>h.id===id);
     if (!h||!confirm(`Turn off "${h.name}"? It will move to the archive.`)) return;
-    h.until.toggledOff=true; h.until.toggledOffDate=toKey(todayDate());
-    save(); renderManage(); if (currentTab==='today') renderToday();
+    h.until.toggledOff=true;h.until.toggledOffDate=toKey(todayDate());
+    save();renderManage();if(currentTab==='today')renderToday();
   }
 
-  function deleteHabit(id) {
+  function deleteHabit(id){
     if (!confirm('Permanently delete this habit and all its history?')) return;
     habits=habits.filter(h=>h.id!==id);
     Object.keys(logs).forEach(key=>{delete logs[key][id];});
-    save(); renderManage();
+    save();renderManage();
   }
 
   if ('serviceWorker' in navigator) {
