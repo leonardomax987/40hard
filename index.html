@@ -46,7 +46,6 @@
     ::-webkit-scrollbar-track { background: var(--bg); }
     ::-webkit-scrollbar-thumb { background: var(--border2); border-radius: 99px; }
 
-    /* ── HEADER (compact) ── */
     .header {
       display: flex;
       align-items: center;
@@ -71,7 +70,6 @@
       margin-top: 1px;
     }
 
-    /* ── FLAME BAR ── */
     .flame-bar {
       height: 2px;
       background: linear-gradient(90deg, transparent, var(--wine), var(--red2), var(--accent), var(--accent2), var(--yellow), var(--accent2), var(--accent), var(--red2), var(--wine), transparent);
@@ -80,7 +78,6 @@
       opacity: 0.7;
     }
 
-    /* ── TABS (compact) ── */
     .tabs {
       display: flex;
       gap: 5px;
@@ -100,7 +97,6 @@
       font-weight: 700;
       color: var(--muted);
       transition: all 0.2s;
-      letter-spacing: 0.2px;
     }
     .tab.active {
       background: linear-gradient(135deg, var(--accent), var(--red2));
@@ -108,7 +104,6 @@
       box-shadow: var(--glow);
     }
 
-    /* ── BUTTONS ── */
     .btn {
       background: linear-gradient(135deg, var(--accent), var(--red2));
       color: var(--yellow);
@@ -132,7 +127,6 @@
     .btn.small { padding: 4px 10px; font-size: 0.76rem; }
     .btn:disabled { opacity: 0.35; cursor: default; box-shadow: none; }
 
-    /* ── STATS STRIP ── */
     .stats-strip {
       background: var(--surface);
       border: 1px solid var(--border2);
@@ -141,7 +135,6 @@
       margin-bottom: 12px;
       display: flex;
       align-items: center;
-      justify-content: space-between;
       gap: 10px;
     }
     .stats-strip .stat-text {
@@ -156,14 +149,12 @@
       color: var(--muted);
       white-space: nowrap;
     }
-    /* completion bar inside strip */
     .completion-bar-wrap {
       flex: 1;
       height: 5px;
       background: #000;
       border-radius: 99px;
       overflow: hidden;
-      margin: 0 10px;
     }
     .completion-bar {
       height: 100%;
@@ -172,7 +163,6 @@
       transition: width 0.4s ease;
     }
 
-    /* ── DAY NAV ── */
     .day-nav {
       display: flex;
       align-items: center;
@@ -188,7 +178,6 @@
     .day-nav-label .date-sub { font-size: 0.7rem; color: var(--muted); margin-top: 1px; }
     .today-badge { font-size: 0.62rem; font-weight: 700; background: linear-gradient(135deg, var(--accent), var(--red2)); color: var(--yellow); padding: 2px 7px; border-radius: 99px; margin-left: 7px; vertical-align: middle; }
 
-    /* ── HABIT CARDS ── */
     .habit-card {
       background: var(--surface);
       border: 1px solid var(--border2);
@@ -209,7 +198,11 @@
       display: flex; align-items: center; justify-content: center;
       font-size: 1rem; transition: all 0.15s; color: transparent;
     }
-    .habit-check.checked { background: linear-gradient(135deg, var(--accent), var(--accent2)); border-color: var(--accent); color: #fff; box-shadow: 0 0 10px rgba(232,93,4,0.4); }
+    .habit-check.checked {
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      border-color: var(--accent); color: #fff;
+      box-shadow: 0 0 10px rgba(232,93,4,0.4);
+    }
     .habit-check:hover { border-color: var(--accent); }
 
     .habit-info { flex: 1; min-width: 0; }
@@ -217,19 +210,16 @@
     .habit-name.done { text-decoration: line-through; color: var(--muted); }
     .habit-sub { font-size: 0.72rem; color: var(--muted); margin-top: 2px; }
 
-    /* ── SECTION LABEL ── */
     .section-label {
       font-size: 0.68rem; font-weight: 800; text-transform: uppercase;
       letter-spacing: 1.5px; color: var(--accent); margin: 16px 0 8px;
       padding-left: 9px; border-left: 3px solid var(--accent);
     }
 
-    /* flex progress (flexible habits) */
     .progress-wrap { background: var(--border); border-radius: 99px; height: 4px; margin-top: 6px; overflow: hidden; }
     .progress-bar { height: 100%; border-radius: 99px; background: linear-gradient(90deg, var(--accent), var(--accent2)); transition: width 0.4s; }
     .progress-bar.done { background: linear-gradient(90deg, #4ade80, #22c55e); }
 
-    /* ── HISTORY TABLE ── */
     .view-nav { display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px; }
     .view-nav-label { font-size: 0.9rem; font-weight: 700; color: var(--accent3); }
     .nav-arrows { display: flex; gap: 8px; }
@@ -244,7 +234,6 @@
     .cell-na { color: var(--border2); text-align: center; }
     .cell-partial { color: var(--yellow); font-size: 0.78rem; text-align: center; font-weight: 700; }
 
-    /* ── MODAL ── */
     .modal-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.8); z-index: 100; align-items: center; justify-content: center; }
     .modal-overlay.open { display: flex; }
     .modal { background: var(--surface); border: 1px solid var(--border2); border-radius: 16px; padding: 24px; width: 100%; max-width: 460px; box-shadow: 0 24px 64px rgba(0,0,0,0.7), var(--glow); max-height: 92vh; overflow-y: auto; }
@@ -252,8 +241,14 @@
 
     .form-group { margin-bottom: 14px; }
     .form-group label { display: block; font-size: 0.76rem; color: var(--muted); margin-bottom: 5px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; }
-    .form-group input[type="text"],.form-group input[type="number"],.form-group input[type="date"],.form-group select { width: 100%; background: var(--bg); border: 1px solid var(--border2); border-radius: 8px; padding: 9px 11px; color: var(--text); font-size: 0.92rem; }
-    .form-group input:focus,.form-group select:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 2px rgba(232,93,4,0.2); }
+    .form-group input[type="text"],
+    .form-group input[type="number"],
+    .form-group input[type="date"],
+    .form-group select {
+      width: 100%; background: var(--bg); border: 1px solid var(--border2);
+      border-radius: 8px; padding: 9px 11px; color: var(--text); font-size: 0.92rem;
+    }
+    .form-group input:focus, .form-group select:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 2px rgba(232,93,4,0.2); }
     .form-group select option { background: var(--bg); }
     input[type="date"]::-webkit-calendar-picker-indicator { filter: invert(0.6) sepia(1) saturate(2) hue-rotate(5deg); }
 
@@ -282,7 +277,6 @@
     .modal-actions { display: flex; gap: 10px; margin-top: 20px; }
     .modal-actions .btn { flex: 1; padding: 10px; }
 
-    /* ── MANAGE ── */
     .manage-card { background: var(--surface); border: 1px solid var(--border2); border-radius: var(--radius); padding: 13px 15px; margin-bottom: 9px; display: flex; align-items: center; justify-content: space-between; gap: 10px; flex-wrap: wrap; transition: border-color 0.2s; }
     .manage-card:hover { border-color: var(--accent); }
     .manage-info .name { font-weight: 700; font-size: 0.93rem; }
@@ -300,7 +294,6 @@
 </head>
 <body>
 
-<!-- HEADER -->
 <div class="header">
   <div>
     <h1>🔥 40 Days Hard</h1>
@@ -310,7 +303,6 @@
 </div>
 <div class="flame-bar"></div>
 
-<!-- TABS -->
 <div class="tabs">
   <div class="tab active" onclick="switchTab('today')">Today</div>
   <div class="tab" onclick="switchTab('history')">History</div>
@@ -447,12 +439,12 @@
 
   function save() {
     localStorage.setItem('ht_habits', JSON.stringify(habits));
-    localStorage.setItem('ht_logs',   JSON.stringify(logs));
+    localStorage.setItem('ht_logs', JSON.stringify(logs));
   }
 
   function toKey(date) {
-    const y=date.getFullYear(),m=String(date.getMonth()+1).padStart(2,'0'),d=String(date.getDate()).padStart(2,'0');
-    return `${y}-${m}-${d}`;
+    const y=date.getFullYear(), m=String(date.getMonth()+1).padStart(2,'0'), d=String(date.getDate()).padStart(2,'0');
+    return y+'-'+m+'-'+d;
   }
   function todayDate() { const d=new Date(); d.setHours(0,0,0,0); return d; }
   function addDays(date,n) { const d=new Date(date); d.setDate(d.getDate()+n); return d; }
@@ -460,16 +452,18 @@
   function formatDate(date) { return date.toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'}); }
   function formatDateShort(date) { return date.toLocaleDateString('en-US',{weekday:'long',month:'long',day:'numeric'}); }
   function daysInMonth(date) { return new Date(date.getFullYear(),date.getMonth()+1,0).getDate(); }
-  function weekDates(sun) { return Array.from({length:7},(_,i)=>addDays(sun,i)); }
-  function monthDates(y,m) { const c=daysInMonth(new Date(y,m,1)); return Array.from({length:c},(_,i)=>new Date(y,m,i+1)); }
-  function flexChecksInDates(h,dates) { return dates.filter(d=>{ const k=toKey(d); return logs[k]&&logs[k][h.id]===true; }).length; }
+  function weekDates(sun) { return Array.from({length:7},function(_,i){return addDays(sun,i);}); }
+  function monthDates(y,m) { var c=daysInMonth(new Date(y,m,1)); return Array.from({length:c},function(_,i){return new Date(y,m,i+1);}); }
+  function flexChecksInDates(h,dates) {
+    return dates.filter(function(d){ var k=toKey(d); return logs[k]&&logs[k][h.id]===true; }).length;
+  }
   function cap(s) { return s.charAt(0).toUpperCase()+s.slice(1); }
 
   function computeEndDate(habit) {
-    if (!habit.until||habit.until.type==='toggle') return null;
+    if (!habit.until || habit.until.type==='toggle') return null;
     if (habit.until.type==='date') return new Date(habit.until.date+'T00:00:00');
     if (habit.until.type==='duration') {
-      const {count,unit}=habit.until, base=todayDate();
+      var count=habit.until.count, unit=habit.until.unit, base=todayDate();
       if (unit==='days') base.setDate(base.getDate()+count);
       if (unit==='weeks') base.setDate(base.getDate()+count*7);
       if (unit==='months') base.setMonth(base.getMonth()+count);
@@ -479,433 +473,449 @@
   }
 
   function hasEnded(h) {
-    if (h.until?.type==='toggle'&&h.until?.toggledOff) return true;
-    if (h.endDate) return new Date(h.endDate+'T00:00:00')<todayDate();
+    if (h.until && h.until.type==='toggle' && h.until.toggledOff) return true;
+    if (h.endDate) return new Date(h.endDate+'T00:00:00') < todayDate();
     return false;
   }
 
   function isActiveOn(h,date) {
-    const d=new Date(date); d.setHours(0,0,0,0);
-    if (h.endDate) { const end=new Date(h.endDate+'T00:00:00'); if (d>end) return false; }
-    if (h.until?.type==='toggle'&&h.until?.toggledOff) {
-      if (h.until.toggledOffDate) { const tod=new Date(h.until.toggledOffDate+'T00:00:00'); if (d>tod) return false; }
+    var d=new Date(date); d.setHours(0,0,0,0);
+    if (h.endDate) { var end=new Date(h.endDate+'T00:00:00'); if (d>end) return false; }
+    if (h.until && h.until.type==='toggle' && h.until.toggledOff) {
+      if (h.until.toggledOffDate) { var tod=new Date(h.until.toggledOffDate+'T00:00:00'); if (d>tod) return false; }
       else return false;
     }
     return true;
   }
 
   function endDateLabel(h) {
-    if (!h.until||h.until.type==='toggle') return 'Manual';
+    if (!h.until || h.until.type==='toggle') return 'Manual';
     if (h.endDate) return 'Until '+formatDate(new Date(h.endDate+'T00:00:00'));
     return '';
   }
 
   function setType(type) {
     habitType=type;
-    document.getElementById('typeSpecific').classList.toggle('active',type==='specific');
-    document.getElementById('typeFlexible').classList.toggle('active',type==='flexible');
-    document.getElementById('specificSection').style.display=type==='specific'?'':'none';
-    document.getElementById('flexibleSection').style.display=type==='flexible'?'':'none';
+    document.getElementById('typeSpecific').classList.toggle('active', type==='specific');
+    document.getElementById('typeFlexible').classList.toggle('active', type==='flexible');
+    document.getElementById('specificSection').style.display = type==='specific' ? '' : 'none';
+    document.getElementById('flexibleSection').style.display = type==='flexible' ? '' : 'none';
   }
 
   function selectUntil(type) {
     untilType=type;
-    ['toggle','date','duration'].forEach(t=>{
-      document.getElementById('untilOpt_'+t).classList.toggle('selected',t===type);
-      document.getElementById('radio'+cap(t)).checked=t===type;
+    ['toggle','date','duration'].forEach(function(t){
+      document.getElementById('untilOpt_'+t).classList.toggle('selected', t===type);
+      document.getElementById('radio'+cap(t)).checked = t===type;
     });
-    document.getElementById('untilDateSub').style.display=type==='date'?'block':'none';
-    document.getElementById('untilDurationSub').style.display=type==='duration'?'block':'none';
+    document.getElementById('untilDateSub').style.display     = type==='date'     ? 'block' : 'none';
+    document.getElementById('untilDurationSub').style.display = type==='duration' ? 'block' : 'none';
   }
 
-  function openModal(id=null) {
-    editingId=id;
-    const h=id?habits.find(h=>h.id===id):null;
-    document.getElementById('modalTitle').textContent=id?'Edit Habit':'New Habit';
-    document.getElementById('habitName').value=h?h.name:'';
-    if (h?.scheduleType==='flexible') {
+  function openModal(id) {
+    id = id || null;
+    editingId = id;
+    var h = id ? habits.find(function(h){return h.id===id;}) : null;
+    document.getElementById('modalTitle').textContent = id ? 'Edit Habit' : 'New Habit';
+    document.getElementById('habitName').value = h ? h.name : '';
+    if (h && h.scheduleType==='flexible') {
       setType('flexible');
-      document.getElementById('freqCount').value=h.freqCount||3;
-      document.getElementById('freqPeriod').value=h.freqPeriod||'week';
+      document.getElementById('freqCount').value  = h.freqCount  || 3;
+      document.getElementById('freqPeriod').value = h.freqPeriod || 'week';
     } else {
       setType('specific');
-      let dp='';
-      DAY_NAMES.forEach((name,i)=>{ const sel=h?.days?.includes(i)?'selected':''; dp+=`<div class="day-btn ${sel}" data-day="${i}" onclick="this.classList.toggle('selected')">${name}</div>`; });
-      document.getElementById('dayPicker').innerHTML=dp;
+      var dp='';
+      DAY_NAMES.forEach(function(name,i){
+        var sel = h && h.days && h.days.indexOf(i)>=0 ? 'selected' : '';
+        dp += '<div class="day-btn '+sel+'" data-day="'+i+'" onclick="this.classList.toggle(\'selected\')">'+name+'</div>';
+      });
+      document.getElementById('dayPicker').innerHTML = dp;
     }
-    if (h?.until) {
-      const u=h.until;
-      if (u.type==='date'){selectUntil('date');document.getElementById('untilDateInput').value=h.endDate||'';}
-      else if (u.type==='duration'){selectUntil('duration');document.getElementById('untilDurCount').value=u.count||40;document.getElementById('untilDurUnit').value=u.unit||'days';}
+    if (h && h.until) {
+      var u=h.until;
+      if (u.type==='date') { selectUntil('date'); document.getElementById('untilDateInput').value = h.endDate||''; }
+      else if (u.type==='duration') { selectUntil('duration'); document.getElementById('untilDurCount').value=u.count||40; document.getElementById('untilDurUnit').value=u.unit||'days'; }
       else selectUntil('toggle');
     } else selectUntil('toggle');
     document.getElementById('modalOverlay').classList.add('open');
-    setTimeout(()=>document.getElementById('habitName').focus(),50);
+    setTimeout(function(){ document.getElementById('habitName').focus(); }, 50);
   }
 
-  function closeModal(){ document.getElementById('modalOverlay').classList.remove('open'); editingId=null; }
+  function closeModal() { document.getElementById('modalOverlay').classList.remove('open'); editingId=null; }
 
   function saveHabit() {
-    const name=document.getElementById('habitName').value.trim();
-    if (!name){alert('Please enter a habit name.');return;}
-    let habitData={name,scheduleType:habitType};
+    var name = document.getElementById('habitName').value.trim();
+    if (!name) { alert('Please enter a habit name.'); return; }
+    var habitData = { name:name, scheduleType:habitType };
     if (habitType==='specific') {
-      const sel=[...document.querySelectorAll('.day-btn.selected')].map(el=>parseInt(el.dataset.day));
-      if (!sel.length){alert('Please select at least one day.');return;}
-      habitData.days=sel;
+      var sel = Array.from(document.querySelectorAll('.day-btn.selected')).map(function(el){return parseInt(el.dataset.day);});
+      if (!sel.length) { alert('Please select at least one day.'); return; }
+      habitData.days = sel;
     } else {
-      const count=parseInt(document.getElementById('freqCount').value);
-      if (!count||count<1){alert('Please enter a valid frequency.');return;}
-      habitData.freqCount=count; habitData.freqPeriod=document.getElementById('freqPeriod').value;
+      var count = parseInt(document.getElementById('freqCount').value);
+      if (!count||count<1) { alert('Please enter a valid frequency.'); return; }
+      habitData.freqCount  = count;
+      habitData.freqPeriod = document.getElementById('freqPeriod').value;
     }
-    let until={type:untilType},endDate=null;
-    if (untilType==='date'){
-      const val=document.getElementById('untilDateInput').value;
-      if (!val){alert('Please choose an end date.');return;}
-      until.date=val;endDate=val;
-    } else if (untilType==='duration'){
-      const count=parseInt(document.getElementById('untilDurCount').value);
-      const unit=document.getElementById('untilDurUnit').value;
-      if (!count||count<1){alert('Please enter a valid duration.');return;}
-      until.count=count;until.unit=unit;
-      const computed=computeEndDate({until});endDate=computed?toKey(computed):null;
+    var until={type:untilType}, endDate=null;
+    if (untilType==='date') {
+      var val=document.getElementById('untilDateInput').value;
+      if (!val) { alert('Please choose an end date.'); return; }
+      until.date=val; endDate=val;
+    } else if (untilType==='duration') {
+      var dc=parseInt(document.getElementById('untilDurCount').value);
+      var du=document.getElementById('untilDurUnit').value;
+      if (!dc||dc<1) { alert('Please enter a valid duration.'); return; }
+      until.count=dc; until.unit=du;
+      var computed=computeEndDate({until:until}); endDate=computed?toKey(computed):null;
     }
-    habitData.until=until;habitData.endDate=endDate;
-    if (editingId){
-      const idx=habits.findIndex(h=>h.id===editingId);
-      const prev=habits[idx];
-      if (untilType==='toggle'&&prev.until?.type==='toggle'){until.toggledOff=prev.until.toggledOff||false;until.toggledOffDate=prev.until.toggledOffDate||null;}
-      habits[idx]={...prev,...habitData};
+    habitData.until=until; habitData.endDate=endDate;
+    if (editingId) {
+      var idx=habits.findIndex(function(h){return h.id===editingId;});
+      var prev=habits[idx];
+      if (untilType==='toggle' && prev.until && prev.until.type==='toggle') {
+        until.toggledOff=prev.until.toggledOff||false;
+        until.toggledOffDate=prev.until.toggledOffDate||null;
+      }
+      habits[idx] = Object.assign({}, prev, habitData);
     } else {
-      if (untilType==='toggle'){until.toggledOff=false;until.toggledOffDate=null;}
-      habits.push({id:Date.now().toString(),...habitData});
+      if (untilType==='toggle') { until.toggledOff=false; until.toggledOffDate=null; }
+      habits.push(Object.assign({id:Date.now().toString()}, habitData));
     }
-    save();closeModal();refresh();
+    save(); closeModal(); refresh();
   }
 
-  document.getElementById('modalOverlay').addEventListener('click',function(e){if(e.target===this)closeModal();});
-  document.getElementById('habitName').addEventListener('keydown',e=>{if(e.key==='Enter')saveHabit();});
+  document.getElementById('modalOverlay').addEventListener('click', function(e){ if(e.target===this) closeModal(); });
+  document.getElementById('habitName').addEventListener('keydown', function(e){ if(e.key==='Enter') saveHabit(); });
 
-  function selectRecover(type){
+  function selectRecover(type) {
     recoverType=type;
-    ['toggle','date','duration'].forEach(t=>{
-      document.getElementById('recOpt_'+t).classList.toggle('selected',t===type);
-      document.getElementById('recRadio'+cap(t)).checked=t===type;
+    ['toggle','date','duration'].forEach(function(t){
+      document.getElementById('recOpt_'+t).classList.toggle('selected', t===type);
+      document.getElementById('recRadio'+cap(t)).checked = t===type;
     });
-    document.getElementById('recDateSub').style.display=type==='date'?'block':'none';
-    document.getElementById('recDurationSub').style.display=type==='duration'?'block':'none';
+    document.getElementById('recDateSub').style.display     = type==='date'     ? 'block' : 'none';
+    document.getElementById('recDurationSub').style.display = type==='duration' ? 'block' : 'none';
   }
 
-  function openRecover(id){
+  function openRecover(id) {
     recoveringId=id;
-    document.getElementById('recoverName').textContent=habits.find(h=>h.id===id)?.name||'';
+    var h=habits.find(function(h){return h.id===id;});
+    document.getElementById('recoverName').textContent = h ? h.name : '';
     selectRecover('toggle');
     document.getElementById('recoverOverlay').classList.add('open');
   }
 
-  function closeRecover(){ document.getElementById('recoverOverlay').classList.remove('open'); recoveringId=null; }
+  function closeRecover() { document.getElementById('recoverOverlay').classList.remove('open'); recoveringId=null; }
 
-  function confirmRecover(){
-    const habit=habits.find(h=>h.id===recoveringId);
+  function confirmRecover() {
+    var habit=habits.find(function(h){return h.id===recoveringId;});
     if (!habit) return;
-    let until={type:recoverType},endDate=null;
-    if (recoverType==='date'){
-      const val=document.getElementById('recDateInput').value;
-      if (!val){alert('Please choose an end date.');return;}
-      until.date=val;endDate=val;
-    } else if (recoverType==='duration'){
-      const count=parseInt(document.getElementById('recDurCount').value);
-      const unit=document.getElementById('recDurUnit').value;
-      if (!count||count<1){alert('Please enter a valid duration.');return;}
-      until.count=count;until.unit=unit;
-      const computed=computeEndDate({until});endDate=computed?toKey(computed):null;
+    var until={type:recoverType}, endDate=null;
+    if (recoverType==='date') {
+      var val=document.getElementById('recDateInput').value;
+      if (!val) { alert('Please choose an end date.'); return; }
+      until.date=val; endDate=val;
+    } else if (recoverType==='duration') {
+      var dc=parseInt(document.getElementById('recDurCount').value);
+      var du=document.getElementById('recDurUnit').value;
+      if (!dc||dc<1) { alert('Please enter a valid duration.'); return; }
+      until.count=dc; until.unit=du;
+      var computed=computeEndDate({until:until}); endDate=computed?toKey(computed):null;
     }
-    if (recoverType==='toggle'){until.toggledOff=false;until.toggledOffDate=null;}
-    habit.until=until;habit.endDate=endDate;
-    save();closeRecover();refresh();
+    if (recoverType==='toggle') { until.toggledOff=false; until.toggledOffDate=null; }
+    habit.until=until; habit.endDate=endDate;
+    save(); closeRecover(); refresh();
   }
 
-  document.getElementById('recoverOverlay').addEventListener('click',function(e){if(e.target===this)closeRecover();});
+  document.getElementById('recoverOverlay').addEventListener('click', function(e){ if(e.target===this) closeRecover(); });
 
-  function switchTab(tab){
+  function switchTab(tab) {
     currentTab=tab;
-    document.querySelectorAll('.tab').forEach((el,i)=>{el.classList.toggle('active',['today','history','manage'][i]===tab);});
-    ['today','history','manage'].forEach(t=>{document.getElementById('tab-'+t).style.display=t===tab?'':'none';});
-    if (tab==='today') renderToday();
-    if (tab==='history'){historyOffset=0;renderHistory();}
-    if (tab==='manage') renderManage();
+    document.querySelectorAll('.tab').forEach(function(el,i){
+      el.classList.toggle('active', ['today','history','manage'][i]===tab);
+    });
+    ['today','history','manage'].forEach(function(t){
+      document.getElementById('tab-'+t).style.display = t===tab ? '' : 'none';
+    });
+    if (tab==='today')   renderToday();
+    if (tab==='history') { historyOffset=0; renderHistory(); }
+    if (tab==='manage')  renderManage();
   }
 
-  function refresh(){
-    if (currentTab==='today') renderToday();
+  function refresh() {
+    if (currentTab==='today')   renderToday();
     if (currentTab==='history') renderHistory();
-    if (currentTab==='manage') renderManage();
+    if (currentTab==='manage')  renderManage();
   }
 
-  function renderToday(){
-    const base=todayDate(), viewDate=addDays(base,todayOffset);
-    const key=toKey(viewDate), dow=viewDate.getDay(), isToday=todayOffset===0;
+  function renderToday() {
+    var base=todayDate(), viewDate=addDays(base,todayOffset);
+    var key=toKey(viewDate), dow=viewDate.getDay(), isToday=todayOffset===0;
     if (!logs[key]) logs[key]={};
-    const activeH=habits.filter(h=>isActiveOn(h,viewDate));
-    const specH=activeH.filter(h=>h.scheduleType==='specific'&&h.days.includes(dow));
-    const flexH=activeH.filter(h=>h.scheduleType==='flexible');
-    const allH=[...specH,...flexH];
-    const done=allH.filter(h=>logs[key][h.id]===true).length;
-    const total=allH.length;
-    const pct=total>0?Math.round((done/total)*100):0;
+    var activeH=habits.filter(function(h){return isActiveOn(h,viewDate);});
+    var specH=activeH.filter(function(h){return h.scheduleType==='specific' && h.days.indexOf(dow)>=0;});
+    var flexH=activeH.filter(function(h){return h.scheduleType==='flexible';});
+    var allH=specH.concat(flexH);
+    var done=allH.filter(function(h){return logs[key][h.id]===true;}).length;
+    var total=allH.length;
+    var pct=total>0 ? Math.round((done/total)*100) : 0;
 
-    let html=`
-      <div class="day-nav">
-        <button class="btn secondary small" onclick="shiftTodayView(-1)">◀</button>
-        <div class="day-nav-label">
-          <div class="date-main">
-            ${isToday?'Today':formatDateShort(viewDate)}
-            ${isToday?'<span class="today-badge">TODAY</span>':''}
-          </div>
-          <div class="date-sub">${formatDate(viewDate)}</div>
-        </div>
-        <button class="btn secondary small" onclick="shiftTodayView(1)">▶</button>
-      </div>
+    var html = '<div class="day-nav">'
+      +'<button class="btn secondary small" onclick="shiftTodayView(-1)">&#9664;</button>'
+      +'<div class="day-nav-label">'
+      +'<div class="date-main">'+(isToday ? 'Today' : formatDateShort(viewDate))+(isToday ? '<span class="today-badge">TODAY</span>' : '')+'</div>'
+      +'<div class="date-sub">'+formatDate(viewDate)+'</div>'
+      +'</div>'
+      +'<button class="btn secondary small" onclick="shiftTodayView(1)">&#9654;</button>'
+      +'</div>'
+      +'<div class="stats-strip">'
+      +'<span class="stat-text">'+done+'/'+total+' done</span>'
+      +'<div class="completion-bar-wrap"><div class="completion-bar" style="width:'+pct+'%"></div></div>'
+      +'<span class="stat-pct">'+pct+'%</span>'
+      +'</div>';
 
-      <div class="stats-strip">
-        <span class="stat-text">${done}/${total} done</span>
-        <div class="completion-bar-wrap">
-          <div class="completion-bar" style="width:${pct}%"></div>
-        </div>
-        <span class="stat-pct">${pct}%</span>
-      </div>
-    `;
-
-    if (specH.length){
-      html+=`<div class="section-label">Scheduled Habits</div>`;
-      specH.forEach(h=>{
-        const checked=logs[key][h.id]===true;
-        html+=habitCardHTML(h,checked,key,h.days.map(d=>DAY_NAMES[d]).join(', '));
+    if (specH.length) {
+      html += '<div class="section-label">Scheduled Habits</div>';
+      specH.forEach(function(h){
+        var checked=logs[key][h.id]===true;
+        html += habitCardHTML(h, checked, key, h.days.map(function(d){return DAY_NAMES[d];}).join(', '));
       });
     }
 
-    if (flexH.length){
-      html+=`<div class="section-label">Flexible Habits</div>`;
-      flexH.forEach(h=>{
-        const checked=logs[key][h.id]===true;
-        const pd=h.freqPeriod==='week'?weekDates(startOfWeek(viewDate)):monthDates(viewDate.getFullYear(),viewDate.getMonth());
-        const checks=flexChecksInDates(h,pd),pct2=Math.min(1,checks/h.freqCount),goalMet=checks>=h.freqCount;
-        html+=`<div class="habit-card">
-          <div class="habit-check ${checked?'checked':''}" onclick="toggleHabit('${h.id}','${key}')">${checked?'✓':''}</div>
-          <div class="habit-info" style="flex:1">
-            <div class="habit-name ${checked?'done':''}">${h.name}</div>
-            <div class="habit-sub">${checks}/${h.freqCount}× this ${h.freqPeriod}</div>
-            <div class="progress-wrap"><div class="progress-bar ${goalMet?'done':''}" style="width:${Math.round(pct2*100)}%"></div></div>
-          </div>
-        </div>`;
+    if (flexH.length) {
+      html += '<div class="section-label">Flexible Habits</div>';
+      flexH.forEach(function(h){
+        var checked=logs[key][h.id]===true;
+        var pd = h.freqPeriod==='week' ? weekDates(startOfWeek(viewDate)) : monthDates(viewDate.getFullYear(), viewDate.getMonth());
+        var checks=flexChecksInDates(h,pd), pct2=Math.min(1,checks/h.freqCount), goalMet=checks>=h.freqCount;
+        html += '<div class="habit-card">'
+          +'<div class="habit-check '+(checked?'checked':'')+'" onclick="toggleHabit(\''+h.id+'\',\''+key+'\')">'+(checked?'✓':'')+'</div>'
+          +'<div class="habit-info" style="flex:1">'
+          +'<div class="habit-name '+(checked?'done':'')+'">'+h.name+'</div>'
+          +'<div class="habit-sub">'+checks+'/'+h.freqCount+'&times; this '+h.freqPeriod+'</div>'
+          +'<div class="progress-wrap"><div class="progress-bar '+(goalMet?'done':'')+'" style="width:'+Math.round(pct2*100)+'%"></div></div>'
+          +'</div></div>';
       });
     }
 
-    if (!total) html+=`<div class="empty">No habits scheduled for this day.</div>`;
-    document.getElementById('tab-today').innerHTML=html;
+    if (!total) html += '<div class="empty">No habits scheduled for this day.</div>';
+    document.getElementById('tab-today').innerHTML = html;
   }
 
-  function habitCardHTML(h,checked,key,subText){
-    return `<div class="habit-card">
-      <div class="habit-check ${checked?'checked':''}" onclick="toggleHabit('${h.id}','${key}')">${checked?'✓':''}</div>
-      <div class="habit-info">
-        <div class="habit-name ${checked?'done':''}">${h.name}</div>
-        <div class="habit-sub">${subText}</div>
-      </div>
-    </div>`;
+  function habitCardHTML(h, checked, key, subText) {
+    return '<div class="habit-card">'
+      +'<div class="habit-check '+(checked?'checked':'')+'" onclick="toggleHabit(\''+h.id+'\',\''+key+'\')">'+(checked?'✓':'')+'</div>'
+      +'<div class="habit-info">'
+      +'<div class="habit-name '+(checked?'done':'')+'">'+h.name+'</div>'
+      +'<div class="habit-sub">'+subText+'</div>'
+      +'</div></div>';
   }
 
-  function shiftTodayView(n){ todayOffset+=n; renderToday(); }
+  function shiftTodayView(n) { todayOffset+=n; renderToday(); }
 
-  function toggleHabit(id,key){
+  function toggleHabit(id, key) {
     if (!logs[key]) logs[key]={};
-    logs[key][id]=!logs[key][id];
-    save();renderToday();
+    logs[key][id] = !logs[key][id];
+    save(); renderToday();
   }
 
-  function renderHistory(){
-    const viewBtns=`<div class="tabs" style="margin-bottom:14px;">
-      <div class="tab ${historyView==='day'?'active':''}" onclick="setHistoryView('day')">Day</div>
-      <div class="tab ${historyView==='week'?'active':''}" onclick="setHistoryView('week')">Week</div>
-      <div class="tab ${historyView==='month'?'active':''}" onclick="setHistoryView('month')">Month</div>
-    </div>`;
+  function renderHistory() {
+    var viewBtns = '<div class="tabs" style="margin-bottom:14px;">'
+      +'<div class="tab '+(historyView==='day'?'active':'')+'" onclick="setHistoryView(\'day\')">Day</div>'
+      +'<div class="tab '+(historyView==='week'?'active':'')+'" onclick="setHistoryView(\'week\')">Week</div>'
+      +'<div class="tab '+(historyView==='month'?'active':'')+'" onclick="setHistoryView(\'month\')">Month</div>'
+      +'</div>';
 
-    const base=todayDate();let navLabel='',columns=[];
-    if (historyView==='day'){
-      const d=addDays(base,historyOffset);
-      navLabel=formatDateShort(d)+(historyOffset===0?' 🔥':'');
-      columns=[{label:DAY_NAMES[d.getDay()],dates:[d],isFuture:d>base}];
-    } else if (historyView==='week'){
-      const ws=addDays(startOfWeek(base),historyOffset*7),we=addDays(ws,6);
-      navLabel=`${formatDate(ws)} – ${formatDate(we)}`;
-      for (let i=0;i<7;i++){const day=addDays(ws,i);columns.push({label:DAY_NAMES[day.getDay()]+'<br><span style="font-size:0.68rem">'+(day.getMonth()+1)+'/'+day.getDate()+'</span>',dates:[day],isFuture:day>base});}
+    var base=todayDate(), navLabel='', columns=[];
+
+    if (historyView==='day') {
+      var d=addDays(base,historyOffset);
+      navLabel = formatDateShort(d)+(historyOffset===0?' 🔥':'');
+      columns = [{label:DAY_NAMES[d.getDay()], dates:[d], isFuture:d>base}];
+    } else if (historyView==='week') {
+      var ws=addDays(startOfWeek(base),historyOffset*7), we=addDays(ws,6);
+      navLabel = formatDate(ws)+' – '+formatDate(we);
+      for (var i=0;i<7;i++) {
+        var day=addDays(ws,i);
+        columns.push({label:DAY_NAMES[day.getDay()]+'<br><span style="font-size:0.68rem">'+(day.getMonth()+1)+'/'+day.getDate()+'</span>', dates:[day], isFuture:day>base});
+      }
     } else {
-      const ref=new Date(base.getFullYear(),base.getMonth()+historyOffset,1);
-      navLabel=ref.toLocaleDateString('en-US',{month:'long',year:'numeric'});
-      const allDays=monthDates(ref.getFullYear(),ref.getMonth());
-      const wm=new Map();
-      allDays.forEach(d=>{const ws=toKey(startOfWeek(d));if(!wm.has(ws))wm.set(ws,[]);wm.get(ws).push(d);});
-      wm.forEach(dates=>{const ws=startOfWeek(dates[0]),we=addDays(ws,6);columns.push({label:`${ws.getMonth()+1}/${ws.getDate()}–${we.getMonth()+1}/${we.getDate()}`,dates,isFuture:dates.every(d=>d>base)});});
+      var ref=new Date(base.getFullYear(), base.getMonth()+historyOffset, 1);
+      navLabel = ref.toLocaleDateString('en-US',{month:'long',year:'numeric'});
+      var allDays=monthDates(ref.getFullYear(), ref.getMonth());
+      var wm=new Map();
+      allDays.forEach(function(d){
+        var wsk=toKey(startOfWeek(d));
+        if (!wm.has(wsk)) wm.set(wsk,[]);
+        wm.get(wsk).push(d);
+      });
+      wm.forEach(function(dates){
+        var ws=startOfWeek(dates[0]), we=addDays(ws,6);
+        columns.push({label:(ws.getMonth()+1)+'/'+ws.getDate()+'–'+(we.getMonth()+1)+'/'+we.getDate(), dates:dates, isFuture:dates.every(function(d){return d>base;})});
+      });
     }
 
-    const nav=`<div class="view-nav">
-      <div class="nav-arrows">
-        <button class="btn secondary small" onclick="shiftHistory(-1)">◀</button>
-        <button class="btn secondary small" onclick="shiftHistory(1)">▶</button>
-      </div>
-      <span class="view-nav-label">${navLabel}</span>
-      <button class="btn secondary small" onclick="shiftHistory('reset')">Today</button>
-    </div>`;
+    var nav = '<div class="view-nav">'
+      +'<div class="nav-arrows">'
+      +'<button class="btn secondary small" onclick="shiftHistory(-1)">&#9664;</button>'
+      +'<button class="btn secondary small" onclick="shiftHistory(1)">&#9654;</button>'
+      +'</div>'
+      +'<span class="view-nav-label">'+navLabel+'</span>'
+      +'<button class="btn secondary small" onclick="shiftHistory(\'reset\')">Today</button>'
+      +'</div>';
 
-    if (!habits.length){document.getElementById('tab-history').innerHTML=viewBtns+nav+`<div class="empty">No habits yet.</div>`;return;}
+    if (!habits.length) { document.getElementById('tab-history').innerHTML=viewBtns+nav+'<div class="empty">No habits yet.</div>'; return; }
 
-    const colDates=columns.flatMap(c=>c.dates);
-    const vis=habits.filter(h=>colDates.some(d=>isActiveOn(h,d)));
-    const specH=vis.filter(h=>h.scheduleType==='specific');
-    const flexH=vis.filter(h=>h.scheduleType==='flexible');
+    var colDates=columns.reduce(function(a,c){return a.concat(c.dates);},[]);
+    var vis=habits.filter(function(h){return colDates.some(function(d){return isActiveOn(h,d);});});
+    var specH=vis.filter(function(h){return h.scheduleType==='specific';});
+    var flexH=vis.filter(function(h){return h.scheduleType==='flexible';});
 
-    let thead=`<tr><th>Habit</th>`;
-    columns.forEach(col=>{thead+=`<th style="text-align:center">${col.label}</th>`;});
-    thead+=`</tr>`;
-    let tbody='';
+    var thead='<tr><th>Habit</th>';
+    columns.forEach(function(col){ thead+='<th style="text-align:center">'+col.label+'</th>'; });
+    thead+='</tr>';
+    var tbody='';
 
-    if (specH.length){
-      tbody+=sectionRow('Scheduled Habits',columns.length+1);
-      specH.forEach(h=>{
-        tbody+=`<tr><td style="font-weight:700;white-space:nowrap">${h.name}</td>`;
-        columns.forEach(col=>{
-          if (historyView!=='month'){
-            const d=col.dates[0],key=toKey(d),sched=h.days.includes(d.getDay())&&isActiveOn(h,d);
-            if (!sched){tbody+=`<td class="cell-na">–</td>`;return;}
-            if (col.isFuture){tbody+=`<td class="cell-na">·</td>`;return;}
-            const v=logs[key]?.[h.id];tbody+=v?`<td class="cell-done">✓</td>`:`<td class="cell-skip">✗</td>`;
+    if (specH.length) {
+      tbody+=sectionRow('Scheduled Habits', columns.length+1);
+      specH.forEach(function(h){
+        tbody+='<tr><td style="font-weight:700;white-space:nowrap">'+h.name+'</td>';
+        columns.forEach(function(col){
+          if (historyView!=='month') {
+            var d=col.dates[0], key=toKey(d), sched=h.days.indexOf(d.getDay())>=0 && isActiveOn(h,d);
+            if (!sched) { tbody+='<td class="cell-na">–</td>'; return; }
+            if (col.isFuture) { tbody+='<td class="cell-na">·</td>'; return; }
+            var v=logs[key]&&logs[key][h.id];
+            tbody += v ? '<td class="cell-done">✓</td>' : '<td class="cell-skip">✗</td>';
           } else {
-            const sched=col.dates.filter(d=>h.days.includes(d.getDay())&&isActiveOn(h,d)&&d<=base);
-            const done=sched.filter(d=>logs[toKey(d)]?.[h.id]===true);
-            if (!sched.length){tbody+=`<td class="cell-na">–</td>`;return;}
-            if (col.isFuture){tbody+=`<td class="cell-na">·</td>`;return;}
-            if (done.length===sched.length) tbody+=`<td class="cell-done">✓</td>`;
-            else if (!done.length) tbody+=`<td class="cell-skip">✗</td>`;
-            else tbody+=`<td class="cell-partial">${done.length}/${sched.length}</td>`;
+            var sched=col.dates.filter(function(d){return h.days.indexOf(d.getDay())>=0 && isActiveOn(h,d) && d<=base;});
+            var done=sched.filter(function(d){var k=toKey(d);return logs[k]&&logs[k][h.id]===true;});
+            if (!sched.length) { tbody+='<td class="cell-na">–</td>'; return; }
+            if (col.isFuture)  { tbody+='<td class="cell-na">·</td>';  return; }
+            if (done.length===sched.length) tbody+='<td class="cell-done">✓</td>';
+            else if (!done.length) tbody+='<td class="cell-skip">✗</td>';
+            else tbody+='<td class="cell-partial">'+done.length+'/'+sched.length+'</td>';
           }
         });
-        tbody+=`</tr>`;
+        tbody+='</tr>';
       });
     }
 
-    if (flexH.length){
-      tbody+=sectionRow('Flexible Habits',columns.length+1);
-      flexH.forEach(h=>{
-        tbody+=`<tr><td style="font-weight:700;white-space:nowrap">${h.name} <span style="font-size:0.68rem;color:var(--muted)">(${h.freqCount}×/${h.freqPeriod})</span></td>`;
-        if (h.freqPeriod==='week'){
-          if (historyView==='day'){
-            const d=columns[0].dates[0],key=toKey(d);
-            if (!isActiveOn(h,d)){tbody+=`<td class="cell-na">–</td>`;}
-            else if (columns[0].isFuture){tbody+=`<td class="cell-na">·</td>`;}
-            else{const v=logs[key]?.[h.id];tbody+=v?`<td class="cell-done">✓</td>`:`<td class="cell-skip">✗</td>`;}
-          } else if (historyView==='week'){
-            const active=columns.flatMap(c=>c.dates).filter(d=>isActiveOn(h,d));
-            const past=active.filter(d=>d<=base),checks=flexChecksInDates(h,past);
-            const allFut=columns.every(c=>c.isFuture);
-            if (allFut||!active.length){tbody+=`<td colspan="${columns.length}" class="cell-na">·</td>`;}
-            else if (historyOffset<0){tbody+=checks>=h.freqCount?`<td colspan="${columns.length}" class="cell-done">✓</td>`:`<td colspan="${columns.length}" class="cell-skip">✗ ${checks}/${h.freqCount}</td>`;}
-            else{tbody+=`<td colspan="${columns.length}" class="cell-partial">${checks}/${h.freqCount} so far</td>`;}
+    if (flexH.length) {
+      tbody+=sectionRow('Flexible Habits', columns.length+1);
+      flexH.forEach(function(h){
+        tbody+='<tr><td style="font-weight:700;white-space:nowrap">'+h.name+' <span style="font-size:0.68rem;color:var(--muted)">('+h.freqCount+'×/'+h.freqPeriod+')</span></td>';
+        if (h.freqPeriod==='week') {
+          if (historyView==='day') {
+            var d=columns[0].dates[0], key=toKey(d);
+            if (!isActiveOn(h,d)) { tbody+='<td class="cell-na">–</td>'; }
+            else if (columns[0].isFuture) { tbody+='<td class="cell-na">·</td>'; }
+            else { var v=logs[key]&&logs[key][h.id]; tbody+=v?'<td class="cell-done">✓</td>':'<td class="cell-skip">✗</td>'; }
+          } else if (historyView==='week') {
+            var active=columns.reduce(function(a,c){return a.concat(c.dates);},[]).filter(function(d){return isActiveOn(h,d);});
+            var past=active.filter(function(d){return d<=base;}), checks=flexChecksInDates(h,past);
+            var allFut=columns.every(function(c){return c.isFuture;});
+            if (allFut||!active.length) { tbody+='<td colspan="'+columns.length+'" class="cell-na">·</td>'; }
+            else if (historyOffset<0) { tbody+=checks>=h.freqCount?'<td colspan="'+columns.length+'" class="cell-done">✓</td>':'<td colspan="'+columns.length+'" class="cell-skip">✗ '+checks+'/'+h.freqCount+'</td>'; }
+            else { tbody+='<td colspan="'+columns.length+'" class="cell-partial">'+checks+'/'+h.freqCount+' so far</td>'; }
           } else {
-            columns.forEach(col=>{
-              const active=col.dates.filter(d=>isActiveOn(h,d)),past=active.filter(d=>d<=base),checks=flexChecksInDates(h,past);
-              const isCur=col.dates.some(d=>toKey(d)===toKey(base));
-              if (!active.length){tbody+=`<td class="cell-na">–</td>`;return;}
-              if (col.isFuture){tbody+=`<td class="cell-na">·</td>`;return;}
-              if (isCur){tbody+=`<td class="cell-partial">${checks}/${h.freqCount}</td>`;return;}
-              tbody+=checks>=h.freqCount?`<td class="cell-done">✓</td>`:`<td class="cell-skip">✗</td>`;
+            columns.forEach(function(col){
+              var active=col.dates.filter(function(d){return isActiveOn(h,d);}), past=active.filter(function(d){return d<=base;}), checks=flexChecksInDates(h,past);
+              var isCur=col.dates.some(function(d){return toKey(d)===toKey(base);});
+              if (!active.length){tbody+='<td class="cell-na">–</td>';return;}
+              if (col.isFuture){tbody+='<td class="cell-na">·</td>';return;}
+              if (isCur){tbody+='<td class="cell-partial">'+checks+'/'+h.freqCount+'</td>';return;}
+              tbody+=checks>=h.freqCount?'<td class="cell-done">✓</td>':'<td class="cell-skip">✗</td>';
             });
           }
         } else {
-          if (historyView==='day'){
-            const d=columns[0].dates[0],key=toKey(d);
-            if (!isActiveOn(h,d)){tbody+=`<td class="cell-na">–</td>`;}
-            else if (columns[0].isFuture){tbody+=`<td class="cell-na">·</td>`;}
-            else{const v=logs[key]?.[h.id];tbody+=v?`<td class="cell-done">✓</td>`:`<td class="cell-skip">✗</td>`;}
-          } else if (historyView==='week'){
-            columns.forEach(col=>{
-              const d=col.dates[0],key=toKey(d);
-              if (!isActiveOn(h,d)){tbody+=`<td class="cell-na">–</td>`;return;}
-              if (col.isFuture){tbody+=`<td class="cell-na">·</td>`;return;}
-              const v=logs[key]?.[h.id];tbody+=v?`<td class="cell-done">✓</td>`:`<td class="cell-skip">✗</td>`;
+          if (historyView==='day') {
+            var d=columns[0].dates[0], key=toKey(d);
+            if (!isActiveOn(h,d)){tbody+='<td class="cell-na">–</td>';}
+            else if (columns[0].isFuture){tbody+='<td class="cell-na">·</td>';}
+            else{var v=logs[key]&&logs[key][h.id];tbody+=v?'<td class="cell-done">✓</td>':'<td class="cell-skip">✗</td>';}
+          } else if (historyView==='week') {
+            columns.forEach(function(col){
+              var d=col.dates[0], key=toKey(d);
+              if (!isActiveOn(h,d)){tbody+='<td class="cell-na">–</td>';return;}
+              if (col.isFuture){tbody+='<td class="cell-na">·</td>';return;}
+              var v=logs[key]&&logs[key][h.id];tbody+=v?'<td class="cell-done">✓</td>':'<td class="cell-skip">✗</td>';
             });
           } else {
-            const active=columns.flatMap(c=>c.dates).filter(d=>isActiveOn(h,d));
-            const past=active.filter(d=>d<=base),checks=flexChecksInDates(h,past);
-            const isCur=active.some(d=>toKey(d)===toKey(base)),allFut=columns.every(c=>c.isFuture);
-            if (allFut||!active.length){tbody+=`<td colspan="${columns.length}" class="cell-na">·</td>`;}
-            else if (isCur){tbody+=`<td colspan="${columns.length}" class="cell-partial">${checks}/${h.freqCount} so far</td>`;}
-            else{tbody+=checks>=h.freqCount?`<td colspan="${columns.length}" class="cell-done">✓</td>`:`<td colspan="${columns.length}" class="cell-skip">✗ ${checks}/${h.freqCount}</td>`;}
+            var active=columns.reduce(function(a,c){return a.concat(c.dates);},[]).filter(function(d){return isActiveOn(h,d);});
+            var past=active.filter(function(d){return d<=base;}), checks=flexChecksInDates(h,past);
+            var isCur=active.some(function(d){return toKey(d)===toKey(base);}), allFut=columns.every(function(c){return c.isFuture;});
+            if (allFut||!active.length){tbody+='<td colspan="'+columns.length+'" class="cell-na">·</td>';}
+            else if (isCur){tbody+='<td colspan="'+columns.length+'" class="cell-partial">'+checks+'/'+h.freqCount+' so far</td>';}
+            else{tbody+=checks>=h.freqCount?'<td colspan="'+columns.length+'" class="cell-done">✓</td>':'<td colspan="'+columns.length+'" class="cell-skip">✗ '+checks+'/'+h.freqCount+'</td>';}
           }
         }
-        tbody+=`</tr>`;
+        tbody+='</tr>';
       });
     }
 
-    if (!vis.length){document.getElementById('tab-history').innerHTML=viewBtns+nav+`<div class="empty">No habits active during this period.</div>`;return;}
-    document.getElementById('tab-history').innerHTML=viewBtns+nav+`<div class="history-table"><table><thead>${thead}</thead><tbody>${tbody}</tbody></table></div>`;
+    if (!vis.length) { document.getElementById('tab-history').innerHTML=viewBtns+nav+'<div class="empty">No habits active during this period.</div>'; return; }
+    document.getElementById('tab-history').innerHTML = viewBtns+nav+'<div class="history-table"><table><thead>'+thead+'</thead><tbody>'+tbody+'</tbody></table></div>';
   }
 
-  function sectionRow(label,colspan){return `<tr><td colspan="${colspan}" style="background:var(--surface2);color:var(--accent);font-size:0.68rem;font-weight:800;text-transform:uppercase;letter-spacing:1.5px;padding:7px 12px;">${label}</td></tr>`;}
-  function setHistoryView(v){historyView=v;historyOffset=0;renderHistory();}
-  function shiftHistory(n){if(n==='reset')historyOffset=0;else historyOffset+=n;renderHistory();}
+  function sectionRow(label,colspan) {
+    return '<tr><td colspan="'+colspan+'" style="background:var(--surface2);color:var(--accent);font-size:0.68rem;font-weight:800;text-transform:uppercase;letter-spacing:1.5px;padding:7px 12px;">'+label+'</td></tr>';
+  }
+  function setHistoryView(v) { historyView=v; historyOffset=0; renderHistory(); }
+  function shiftHistory(n) { if(n==='reset') historyOffset=0; else historyOffset+=n; renderHistory(); }
 
-  function renderManage(){
-    const active=habits.filter(h=>!hasEnded(h)),archived=habits.filter(h=>hasEnded(h));
-    let html='';
-    const specA=active.filter(h=>h.scheduleType==='specific'),flexA=active.filter(h=>h.scheduleType==='flexible');
-    if (!active.length){html+=`<div class="empty" style="padding:20px 0">No active habits.</div>`;}
-    else{
-      if (specA.length){html+=`<div class="section-label">Scheduled Habits</div>`;specA.forEach(h=>{html+=manageCardHTML(h,h.days.map(d=>DAY_FULL[d]).join(', '));});}
-      if (flexA.length){html+=`<div class="section-label">Flexible Habits</div>`;flexA.forEach(h=>{html+=manageCardHTML(h,`${h.freqCount}× per ${h.freqPeriod}`);});}
+  function renderManage() {
+    var active=habits.filter(function(h){return !hasEnded(h);}), archived=habits.filter(function(h){return hasEnded(h);});
+    var html='';
+    var specA=active.filter(function(h){return h.scheduleType==='specific';}), flexA=active.filter(function(h){return h.scheduleType==='flexible';});
+    if (!active.length) { html+='<div class="empty" style="padding:20px 0">No active habits.</div>'; }
+    else {
+      if (specA.length) { html+='<div class="section-label">Scheduled Habits</div>'; specA.forEach(function(h){ html+=manageCardHTML(h, h.days.map(function(d){return DAY_FULL[d];}).join(', ')); }); }
+      if (flexA.length) { html+='<div class="section-label">Flexible Habits</div>';   flexA.forEach(function(h){ html+=manageCardHTML(h, h.freqCount+'× per '+h.freqPeriod); }); }
     }
-    html+=`<hr class="divider"/><div class="section-label" style="border-color:var(--red2);color:var(--red2);">Archive</div>`;
-    if (!archived.length){html+=`<div style="color:var(--muted);font-size:0.82rem;padding:10px 4px;">No archived habits yet.</div>`;}
-    else{
-      archived.forEach(h=>{
-        const sub=h.scheduleType==='specific'?h.days.map(d=>DAY_NAMES[d]).join(', '):`${h.freqCount}× per ${h.freqPeriod}`;
-        const endedOn=h.endDate?'Ended '+formatDate(new Date(h.endDate+'T00:00:00')):(h.until?.toggledOffDate?'Toggled off '+formatDate(new Date(h.until.toggledOffDate+'T00:00:00')):'Ended');
-        html+=`<div class="archive-card">
-          <div class="manage-info"><div class="name">${h.name}</div><div class="sub">${sub} · ${endedOn}</div></div>
-          <div class="manage-actions">
-            <button class="btn success small" onclick="openRecover('${h.id}')">Recover</button>
-            <button class="btn danger small" onclick="deleteHabit('${h.id}')">Delete</button>
-          </div>
-        </div>`;
+    html+='<hr class="divider"/><div class="section-label" style="border-color:var(--red2);color:var(--red2);">Archive</div>';
+    if (!archived.length) { html+='<div style="color:var(--muted);font-size:0.82rem;padding:10px 4px;">No archived habits yet.</div>'; }
+    else {
+      archived.forEach(function(h){
+        var sub=h.scheduleType==='specific' ? h.days.map(function(d){return DAY_NAMES[d];}).join(', ') : h.freqCount+'× per '+h.freqPeriod;
+        var endedOn=h.endDate ? 'Ended '+formatDate(new Date(h.endDate+'T00:00:00')) : (h.until&&h.until.toggledOffDate ? 'Toggled off '+formatDate(new Date(h.until.toggledOffDate+'T00:00:00')) : 'Ended');
+        html+='<div class="archive-card">'
+          +'<div class="manage-info"><div class="name">'+h.name+'</div><div class="sub">'+sub+' · '+endedOn+'</div></div>'
+          +'<div class="manage-actions">'
+          +'<button class="btn success small" onclick="openRecover(\''+h.id+'\')">Recover</button>'
+          +'<button class="btn danger small" onclick="deleteHabit(\''+h.id+'\')">Delete</button>'
+          +'</div></div>';
       });
     }
-    document.getElementById('tab-manage').innerHTML=html;
+    document.getElementById('tab-manage').innerHTML = html;
   }
 
-  function manageCardHTML(h,sub){
-    const isToggle=h.until?.type==='toggle';
-    const endLabel=endDateLabel(h);
-    const toggleBtn=isToggle?`<button class="btn warning small" onclick="toggleOff('${h.id}')">Turn Off</button>`:'';
-    return `<div class="manage-card">
-      <div class="manage-info">
-        <div class="name">${h.name} <span class="end-tag">${endLabel}</span></div>
-        <div class="sub">${sub}</div>
-      </div>
-      <div class="manage-actions">${toggleBtn}<button class="btn secondary small" onclick="openModal('${h.id}')">Edit</button><button class="btn danger small" onclick="deleteHabit('${h.id}')">Delete</button></div>
-    </div>`;
+  function manageCardHTML(h, sub) {
+    var isToggle = h.until && h.until.type==='toggle';
+    var endLabel = endDateLabel(h);
+    var toggleBtn = isToggle ? '<button class="btn warning small" onclick="toggleOff(\''+h.id+'\')">Turn Off</button>' : '';
+    return '<div class="manage-card">'
+      +'<div class="manage-info">'
+      +'<div class="name">'+h.name+' <span class="end-tag">'+endLabel+'</span></div>'
+      +'<div class="sub">'+sub+'</div>'
+      +'</div>'
+      +'<div class="manage-actions">'+toggleBtn+'<button class="btn secondary small" onclick="openModal(\''+h.id+'\')">Edit</button><button class="btn danger small" onclick="deleteHabit(\''+h.id+'\')">Delete</button></div>'
+      +'</div>';
   }
 
-  function toggleOff(id){
-    const h=habits.find(h=>h.id===id);
-    if (!h||!confirm(`Turn off "${h.name}"? It will move to the archive.`)) return;
-    h.until.toggledOff=true;h.until.toggledOffDate=toKey(todayDate());
-    save();renderManage();if(currentTab==='today')renderToday();
+  function toggleOff(id) {
+    var h=habits.find(function(h){return h.id===id;});
+    if (!h || !confirm('Turn off "'+h.name+'"? It will move to the archive.')) return;
+    h.until.toggledOff=true; h.until.toggledOffDate=toKey(todayDate());
+    save(); renderManage(); if(currentTab==='today') renderToday();
   }
 
-  function deleteHabit(id){
+  function deleteHabit(id) {
     if (!confirm('Permanently delete this habit and all its history?')) return;
-    habits=habits.filter(h=>h.id!==id);
-    Object.keys(logs).forEach(key=>{delete logs[key][id];});
-    save();renderManage();
+    habits=habits.filter(function(h){return h.id!==id;});
+    Object.keys(logs).forEach(function(key){ delete logs[key][id]; });
+    save(); renderManage();
   }
 
   if ('serviceWorker' in navigator) {
