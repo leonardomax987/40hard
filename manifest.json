@@ -1,0 +1,19 @@
+{
+  "name": "40 Days Hard",
+  "short_name": "40 Hard",
+  "description": "Habit Tracker - 40 Days Hard",
+  "start_url": "/40hard/",
+  "scope": "/40hard/",
+  "display": "standalone",
+  "background_color": "#0a0800",
+  "theme_color": "#e85d04",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "icon.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
