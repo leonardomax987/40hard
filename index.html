@@ -657,8 +657,8 @@
     var specH=activeH.filter(function(h){return h.scheduleType==='specific' && h.days.indexOf(dow)>=0;});
     var flexH=activeH.filter(function(h){return h.scheduleType==='flexible';});
     var allH=specH.concat(flexH);
-    var done=allH.filter(function(h){return logs[key][h.id]===true;}).length;
-    var total=allH.length;
+    var done=specH.filter(function(h){return logs[key][h.id]===true;}).length;
+    var total=specH.length;
     var pct=total>0 ? Math.round((done/total)*100) : 0;
 
     var html = '<div class="day-nav">'
